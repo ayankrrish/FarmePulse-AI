@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FarmPulse AI — AI-powered agricultural price forecasting and market intelligence platform for Indian farmers and mandis.">
+  <title>FarmPulse AI — Agricultural Price Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="sidebar-overlay"></div>
+
+<div class="app-container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <div class="logo-icon">🌾</div>
+        <div>
+          <div class="logo-text">FarmPulse AI</div>
+          <div class="logo-subtitle">Agricultural Intelligence</div>
+        </div>
+      </div>
+    </div>
+    <div class="mode-switcher" aria-label="Interface mode">
+      <div class="nav-section-title">Mode</div>
+      <div class="mode-segmented" role="group" aria-label="Choose interface mode">
+        <button class="mode-option active" type="button" data-mode="farmer" aria-pressed="true"><span>&#127806;</span> Farmer</button>
+        <button class="mode-option" type="button" data-mode="academic" aria-pressed="false"><span>&#128300;</span> Academic</button>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Primary navigation">
+      <div class="nav-section-title">Menu</div>
+      <a class="nav-item active" data-page="dashboard" href="#">
+        <span class="nav-icon">📊</span> Dashboard
+      </a>
+      <a class="nav-item" data-page="forecast" href="#">
+        <span class="nav-icon">📈</span> Price Forecast
+      </a>
+      <a class="nav-item" data-page="profit" href="#">
+        <span class="nav-icon">💰</span> Profit Estimator
+      </a>
+      <a class="nav-item" data-page="alerts" href="#">
+        <span class="nav-icon">🔔</span> MSP Alerts
+      </a>
+      <a class="nav-item" data-page="comparison" href="#">
+        <span class="nav-icon">🏪</span> Market Comparison
+      </a>
+      <a class="nav-item" data-page="assistant" href="#">
+        <span class="nav-icon">🤖</span> AI Assistant
+      </a>
+      <div class="academic-nav" hidden>
+        <div class="nav-section-title">Research</div>
+        <a class="nav-item" data-page="analytics" href="#">
+          <span class="nav-icon">&#128300;</span> Model Analytics
+        </a>
+        <a class="nav-item" data-page="about" href="#">
+          <span class="nav-icon">&#8505;&#65039;</span> About FarmPulse AI
+        </a>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-profile">
+        <div class="sidebar-avatar">FP</div>
+        <div>
+          <div style="font-size:13px;font-weight:500">FarmPulse AI</div>
+          <div class="sidebar-version">v3.0 · Production</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <header class="page-header">
+      <div class="page-header-inner">
+        <div style="display:flex;align-items:center;gap:12px">
+          <button class="menu-toggle" aria-label="Open menu">☰</button>
+          <div>
+            <h1 class="page-title" id="pageTitle" aria-live="polite">Dashboard</h1>
+            <p class="page-subtitle" id="pageSubtitle" aria-live="polite">AI-powered price intelligence for Indian farmers</p>
+          </div>
+        </div>
+        <div class="controls-bar">
+          <div class="select-wrapper">
+            <select id="cropSelect" aria-label="Select crop"></select>
+          </div>
+          <div class="select-wrapper">
+            <select id="stateSelect" aria-label="Select state"></select>
+          </div>
+          <input type="month" id="targetDate" class="date-input" autocomplete="off" aria-label="Target forecast date">
+          <button class="presentation-toggle" id="presentationToggle" type="button" hidden aria-pressed="false" title="Toggle presentation mode">Presentation</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-content" id="mainContent" tabindex="-1">
+
+      <section class="page-section active" id="page-dashboard">
+        <div id="dashboardBody">
+          <div class="loading-overlay"><div class="spinner"></div><span>Loading dashboard...</span></div>
+        </div>
+      </section>
+
+      <section class="page-section" id="page-forecast">
+        <div id="forecastBody">
+          <div class="loading-overlay"><div class="spinner"></div><span>Loading forecast...</span></div>
+        </div>
+      </section>
+
+      <section class="page-section" id="page-profit">
+        <div id="profitBody">
+          <div class="loading-overlay"><div class="spinner"></div><span>Loading...</span></div>
+        </div>
+      </section>
+
+      <section class="page-section" id="page-alerts">
+        <div id="alertsBody">
+          <div class="loading-overlay"><div class="spinner"></div><span>Loading MSP alerts...</span></div>
+        </div>
+      </section>
+
+      <section class="page-section" id="page-comparison">
+        <div id="comparisonBody">
+          <div class="loading-overlay"><div class="spinner"></div><span>Comparing markets...</span></div>
+        </div>
+      </section>
+
+      <section class="page-section" id="page-assistant">
+        <div id="assistantBody"></div>
+      </section>
+      <section class="page-section" id="page-analytics">
+        <div id="analyticsBody"></div>
+      </section>
+
+      <section class="page-section" id="page-about">
+        <div id="aboutBody"></div>
+      </section>
+
+
+    </div>
+  </main>
+</div>
+
+<script src="/static/js/charts.js"></script>
+<script src="/static/js/app.js"></script>
+<script src="/static/js/academic.js"></script>
+</body>
+</html>

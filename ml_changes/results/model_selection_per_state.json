@@ -1,0 +1,238 @@
+{
+  "Chana": {
+    "Andhra Pradesh": {
+      "validation_scores": {
+        "Naive_flat": 566.31,
+        "Naive_trend": 633.3,
+        "LSTM": 554.06
+      },
+      "chosen_model": "LSTM",
+      "test_rmse": 297.33,
+      "test_r2": 0.5122
+    },
+    "Gujarat": {
+      "validation_scores": {
+        "Naive_flat": 343.32,
+        "Naive_trend": 420.86,
+        "LSTM": 384.72
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 226.11,
+      "test_r2": 0.5233
+    },
+    "Karnataka": {
+      "validation_scores": {
+        "Naive_flat": 349.82,
+        "Naive_trend": 372.55,
+        "LSTM": 397.09
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 415.18,
+      "test_r2": 0.3313
+    },
+    "Madhya Pradesh": {
+      "validation_scores": {
+        "Naive_flat": 314.79,
+        "Naive_trend": 342.31,
+        "LSTM": 343.78
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 236.27,
+      "test_r2": 0.1392
+    },
+    "Maharashtra": {
+      "validation_scores": {
+        "Naive_flat": 263.51,
+        "Naive_trend": 302.51,
+        "LSTM": 341.58
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 258.46,
+      "test_r2": -0.378
+    },
+    "Rajasthan": {
+      "validation_scores": {
+        "Naive_flat": 309.68,
+        "Naive_trend": 331.04,
+        "LSTM": 329.62
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 268.47,
+      "test_r2": 0.1418
+    },
+    "Telangana": {
+      "validation_scores": {
+        "Naive_flat": 737.8,
+        "Naive_trend": 898.99,
+        "LSTM": 752.2
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 420.08,
+      "test_r2": -0.6677
+    },
+    "Uttar Pradesh": {
+      "validation_scores": {
+        "Naive_flat": 145.73,
+        "Naive_trend": 118.35,
+        "LSTM": 247.71
+      },
+      "chosen_model": "Naive_trend",
+      "test_rmse": 164.89,
+      "test_r2": 0.8467
+    }
+  },
+  "Moong": {
+    "Gujarat": {
+      "validation_scores": {
+        "Naive_flat": 320.58,
+        "Naive_trend": 341.72,
+        "LSTM": 355.05
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 369.38,
+      "test_r2": -0.7045
+    },
+    "Karnataka": {
+      "validation_scores": {
+        "Naive_flat": 386.55,
+        "Naive_trend": 395.11,
+        "LSTM": 375.16
+      },
+      "chosen_model": "LSTM",
+      "test_rmse": 1062.76,
+      "test_r2": -0.2228
+    },
+    "Madhya Pradesh": {
+      "validation_scores": {
+        "Naive_flat": 200.57,
+        "Naive_trend": 207.57,
+        "LSTM": 186.96
+      },
+      "chosen_model": "LSTM",
+      "test_rmse": 175.87,
+      "test_r2": 0.4049
+    },
+    "Maharashtra": {
+      "validation_scores": {
+        "Naive_flat": 388.87,
+        "Naive_trend": 556.05,
+        "LSTM": 335.09
+      },
+      "chosen_model": "LSTM",
+      "test_rmse": 449.79,
+      "test_r2": -0.3015
+    },
+    "Rajasthan": {
+      "validation_scores": {
+        "Naive_flat": 202.93,
+        "Naive_trend": 253.02,
+        "LSTM": 191.64
+      },
+      "chosen_model": "LSTM",
+      "test_rmse": 202.76,
+      "test_r2": 0.6361
+    },
+    "Telangana": {
+      "validation_scores": {
+        "Naive_flat": 503.06,
+        "Naive_trend": 556.13,
+        "LSTM": 534.41
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 355.95,
+      "test_r2": 0.4432
+    },
+    "Uttar Pradesh": {
+      "validation_scores": {
+        "Naive_flat": 209.6,
+        "Naive_trend": 242.3,
+        "LSTM": 255.66
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 384.03,
+      "test_r2": 0.2512
+    }
+  },
+  "Tur": {
+    "Andhra Pradesh": {
+      "validation_scores": {
+        "Naive_flat": 1000.32,
+        "Naive_trend": 1275.43,
+        "LSTM": 1004.04
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 483.0,
+      "test_r2": 0.7475
+    },
+    "Gujarat": {
+      "validation_scores": {
+        "Naive_flat": 401.22,
+        "Naive_trend": 434.97,
+        "LSTM": 481.37
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 257.68,
+      "test_r2": 0.8472
+    },
+    "Karnataka": {
+      "validation_scores": {
+        "Naive_flat": 501.9,
+        "Naive_trend": 561.69,
+        "LSTM": 590.34
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 1351.63,
+      "test_r2": -0.19
+    },
+    "Madhya Pradesh": {
+      "validation_scores": {
+        "Naive_flat": 474.98,
+        "Naive_trend": 518.06,
+        "LSTM": 587.28
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 559.77,
+      "test_r2": 0.6326
+    },
+    "Maharashtra": {
+      "validation_scores": {
+        "Naive_flat": 671.98,
+        "Naive_trend": 814.62,
+        "LSTM": 690.97
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 444.03,
+      "test_r2": 0.691
+    },
+    "Rajasthan": {
+      "validation_scores": {
+        "Naive_flat": 1440.36,
+        "Naive_trend": 1793.76,
+        "LSTM": 1384.83
+      },
+      "chosen_model": "LSTM",
+      "test_rmse": 522.61,
+      "test_r2": 0.6834
+    },
+    "Telangana": {
+      "validation_scores": {
+        "Naive_flat": 446.54,
+        "Naive_trend": 435.01,
+        "LSTM": 506.14
+      },
+      "chosen_model": "Naive_trend",
+      "test_rmse": 479.26,
+      "test_r2": 0.4081
+    },
+    "Uttar Pradesh": {
+      "validation_scores": {
+        "Naive_flat": 269.07,
+        "Naive_trend": 292.31,
+        "LSTM": 492.3
+      },
+      "chosen_model": "Naive_flat",
+      "test_rmse": 417.36,
+      "test_r2": 0.8832
+    }
+  }
+}
