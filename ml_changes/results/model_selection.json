@@ -1,0 +1,23 @@
+{
+  "Chana": {
+    "validation_naive_rmse": 416.98,
+    "validation_lstm_rmse": 444.88,
+    "chosen_model": "Naive",
+    "final_test_rmse": 298.16,
+    "final_test_r2": 0.7554
+  },
+  "Moong": {
+    "validation_naive_rmse": 334.2,
+    "validation_lstm_rmse": 338.43,
+    "chosen_model": "Naive",
+    "final_test_rmse": 512.89,
+    "final_test_r2": 0.6843
+  },
+  "Tur": {
+    "validation_naive_rmse": 744.74,
+    "validation_lstm_rmse": 776.77,
+    "chosen_model": "Naive",
+    "final_test_rmse": 636.6,
+    "final_test_r2": 0.7678
+  }
+}

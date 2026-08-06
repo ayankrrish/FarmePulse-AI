@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# VS Code
+.vscode/
+
+# Environment variables
+.env
+.env.*
+
+# Python cache
+.pytest_cache/
+.mypy_cache/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build
+build/
+dist/
+
+# Temporary files
+tmp/
+temp/
+
+# Model checkpoints (optional if reproducible)
+*.ckpt
+
+# Large datasets (uncomment if you don't want to upload them)
+# data/
+# datasets/
+
+# Generated results (optional)
+# results/
