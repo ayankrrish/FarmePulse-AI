@@ -314,3 +314,4 @@ FarmPulse AI Team
 ---
 
 *Built with ❤️ for Indian farmers*
+# FarmePulse-AI
