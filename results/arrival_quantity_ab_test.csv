@@ -1,0 +1,7 @@
+crop,feature_set,n_rows,RMSE,MAE,R2
+Chana,WITHOUT_quantity,943,359.9,271.94,0.6436
+Chana,WITH_quantity,894,577.18,380.67,0.0833
+Moong,WITHOUT_quantity,835,501.66,325.31,0.7715
+Moong,WITH_quantity,801,517.62,341.14,0.7568
+Tur,WITHOUT_quantity,921,661.56,390.97,0.7493
+Tur,WITH_quantity,873,638.72,416.73,0.8477

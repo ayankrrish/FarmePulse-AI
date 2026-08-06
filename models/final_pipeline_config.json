@@ -1,0 +1,123 @@
+{
+  "Chana": {
+    "Andhra Pradesh": {
+      "method": "LSTM",
+      "expected_test_rmse": 297.33,
+      "expected_test_r2": 0.5122
+    },
+    "Gujarat": {
+      "method": "Naive_flat",
+      "expected_test_rmse": 226.11,
+      "expected_test_r2": 0.5233
+    },
+    "Karnataka": {
+      "method": "Naive_flat",
+      "expected_test_rmse": 415.18,
+      "expected_test_r2": 0.3313
+    },
+    "Madhya Pradesh": {
+      "method": "Naive_flat",
+      "expected_test_rmse": 236.27,
+      "expected_test_r2": 0.1392
+    },
+    "Maharashtra": {
+      "method": "Naive_flat",
+      "expected_test_rmse": 258.46,
+      "expected_test_r2": -0.378
+    },
+    "Rajasthan": {
+      "method": "Naive_flat",
+      "expected_test_rmse": 268.47,
+      "expected_test_r2": 0.1418
+    },
+    "Telangana": {
+      "method": "Naive_flat",
+      "expected_test_rmse": 420.08,
+      "expected_test_r2": -0.6677
+    },
+    "Uttar Pradesh": {
+      "method": "Naive_trend",
+      "expected_test_rmse": 164.89,
+      "expected_test_r2": 0.8467
+    }
+  },
+  "Moong": {
+    "Gujarat": {
+      "method": "Naive_flat",
+      "expected_test_rmse": 369.38,
+      "expected_test_r2": -0.7045
+    },
+    "Karnataka": {
+      "method": "LSTM",
+      "expected_test_rmse": 1062.76,
+      "expected_test_r2": -0.2228
+    },
+    "Madhya Pradesh": {
+      "method": "LSTM",
+      "expected_test_rmse": 175.87,
+      "expected_test_r2": 0.4049
+    },
+    "Maharashtra": {
+      "method": "LSTM",
+      "expected_test_rmse": 449.79,
+      "expected_test_r2": -0.3015
+    },
+    "Rajasthan": {
+      "method": "LSTM",
+      "expected_test_rmse": 202.76,
+      "expected_test_r2": 0.6361
+    },
+    "Telangana": {
+      "method": "Naive_flat",
+      "expected_test_rmse": 355.95,
+      "expected_test_r2": 0.4432
+    },
+    "Uttar Pradesh": {
+      "method": "Naive_flat",
+      "expected_test_rmse": 384.03,
+      "expected_test_r2": 0.2512
+    }
+  },
+  "Tur": {
+    "Madhya Pradesh": {
+      "method": "RF_with_quantity",
+      "model_path": "models/tur_final_model.joblib",
+      "expected_test_r2": 0.8477
+    },
+    "Maharashtra": {
+      "method": "RF_with_quantity",
+      "model_path": "models/tur_final_model.joblib",
+      "expected_test_r2": 0.8477
+    },
+    "Rajasthan": {
+      "method": "RF_with_quantity",
+      "model_path": "models/tur_final_model.joblib",
+      "expected_test_r2": 0.8477
+    },
+    "Uttar Pradesh": {
+      "method": "RF_with_quantity",
+      "model_path": "models/tur_final_model.joblib",
+      "expected_test_r2": 0.8477
+    },
+    "Karnataka": {
+      "method": "RF_with_quantity",
+      "model_path": "models/tur_final_model.joblib",
+      "expected_test_r2": 0.8477
+    },
+    "Telangana": {
+      "method": "RF_with_quantity",
+      "model_path": "models/tur_final_model.joblib",
+      "expected_test_r2": 0.8477
+    },
+    "Andhra Pradesh": {
+      "method": "RF_with_quantity",
+      "model_path": "models/tur_final_model.joblib",
+      "expected_test_r2": 0.8477
+    },
+    "Gujarat": {
+      "method": "RF_with_quantity",
+      "model_path": "models/tur_final_model.joblib",
+      "expected_test_r2": 0.8477
+    }
+  }
+}

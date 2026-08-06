@@ -1,0 +1,7 @@
+{
+    "python.defaultInterpreterPath": "D:/ml_changes/ml_changes/dashboard/venv/Scripts/python.exe",
+    "python.analysis.extraPaths": [
+        "./dashboard",
+        "D:/ml_changes/ml_changes/dashboard/venv/Lib/site-packages"
+    ]
+}

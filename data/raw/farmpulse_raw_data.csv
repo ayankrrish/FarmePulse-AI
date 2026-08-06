@@ -1,0 +1,766 @@
+state,district,mandi,crop_label,commodity,variety,date,min_price,max_price,modal_price
+Madhya Pradesh,Narsinghpur,Kareli APMC,Tur,Red gram/Arhar/Tur(whole),Arhar Dal(Tur),2026-07-29,6325,7300,7300.0
+Madhya Pradesh,Chhindwara,Saunsar APMC,Tur,Red gram/Arhar/Tur(whole),Arhar Dal(Tur),2026-07-29,7500,7500,7500.0
+Andhra Pradesh,Ananthapuramu,Guntakal APMC,Tur,Red gram/Arhar/Tur(whole),Local,2026-07-29,7000,8000,7500.0
+Andhra Pradesh,Kurnool,Kurnool APMC,Tur,Red gram/Arhar/Tur(whole),Local,2026-07-29,6297,8112,7972.0
+Andhra Pradesh,Palnadu,Macharla APMC,Tur,Red gram/Arhar/Tur(whole),Local,2026-07-29,7790,7790,7790.0
+Andhra Pradesh,Palnadu,Narasaraopet APMC,Tur,Red gram/Arhar/Tur(whole),Desi(Whole),2026-07-29,8000,8000,8000.0
+Andhra Pradesh,Ananthapuramu,Tadipatri APMC,Tur,Red gram/Arhar/Tur(whole),Local,2026-07-29,5700,6100,5800.0
+Andhra Pradesh,Palnadu,Ipur APMC,Tur,Red gram/Arhar/Tur(whole),Local,2026-07-29,7540,8000,7650.0
+Andhra Pradesh,Markapuram,Kanigiri APMC,Tur,Red gram/Arhar/Tur(whole),(Whole),2026-07-29,8600,8800,8700.0
+Andhra Pradesh,Ananthapuramu,Gooti APMC,Tur,Red gram/Arhar/Tur(whole),Local,2026-07-29,4986,6075,5479.0
+Andhra Pradesh,Markapuram,Podili APMC,Tur,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,8200,8200,8200.0
+Madhya Pradesh,Chhatarpur,LavKush Nagar(Laundi) APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5365,5415,5415.0
+Madhya Pradesh,Chhatarpur,LavKush Nagar(Laundi) APMC,Tur,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5850,6000,6000.0
+Madhya Pradesh,Sagar,Khurai APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5466,6311,6311.0
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6005,6005,6005.0
+Madhya Pradesh,Chhatarpur,LavKush Nagar(Laundi) APMC,Tur,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5400,5800,5800.0
+Madhya Pradesh,Narsinghpur,Kareli APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6211,6869,6869.0
+Madhya Pradesh,Vidisha,Sironj APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6051,6076,6076.0
+Madhya Pradesh,Harda,Khirakiya APMC,Tur,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5500,5500,5500.0
+Madhya Pradesh,Guna,Guna APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5560,6085,6085.0
+Madhya Pradesh,Dhar,Dhar APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5670,5930,5930.0
+Madhya Pradesh,Neemuch,Manasa APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5751,5980,5980.0
+Madhya Pradesh,Sehore,Nasrullaganj APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6044,6044,6044.0
+Madhya Pradesh,Sagar,Bina APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5240,6143,6143.0
+Madhya Pradesh,Sagar,Rahatgarh APMC,Tur,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5600,5600,5600.0
+Madhya Pradesh,Shivpuri,Kolaras APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5500,6035,6035.0
+Madhya Pradesh,Ashoknagar,Ashoknagar APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5935,6230,5935.0
+Madhya Pradesh,Raisen,Raisen APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5905,5905,5905.0
+Madhya Pradesh,Chhindwara,Chaurai APMC,Tur,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5851,5851,5851.0
+Madhya Pradesh,Mandsaur,Sitmau APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5000,5000,5000.0
+Madhya Pradesh,Khargone,Sanawad APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,7500,7500,7500.0
+Madhya Pradesh,Vidisha,Ganjbasoda APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5700,6200,6200.0
+Madhya Pradesh,Hoshangabad,Pipariya APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6000,6000,6000.0
+Madhya Pradesh,Vidisha,Vidisha APMC,Tur,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5200,5200,5200.0
+Madhya Pradesh,Harda,Sirali APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6880,6880,6880.0
+Madhya Pradesh,Khargone,Sanawad APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6855,7200,6905.0
+Madhya Pradesh,Guna,Guna APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6500,7260,7260.0
+Madhya Pradesh,Vidisha,Ganjbasoda APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6300,6905,6905.0
+Madhya Pradesh,Vidisha,Vidisha APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,5380,7120,7120.0
+Madhya Pradesh,Sehore,Rehati APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6360,6360,6360.0
+Madhya Pradesh,Harda,Khirakiya APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6200,7224,7224.0
+Madhya Pradesh,Hoshangabad,Semriharchand APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,5701,6950,6950.0
+Madhya Pradesh,Morena,Morena APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6380,6855,6855.0
+Madhya Pradesh,Khargone,Khargone APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6800,7126,7126.0
+Madhya Pradesh,Dewas,Loharda APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6475,6475,6475.0
+Madhya Pradesh,Dhar,Dhamnod APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6800,6800,6800.0
+Madhya Pradesh,Dewas,Khategaon APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,300,7336,5700.0
+Madhya Pradesh,Chhindwara,Chaurai APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,5586,5586,5586.0
+Madhya Pradesh,Sehore,Nasrullaganj APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,1000,6883,6651.0
+Madhya Pradesh,Dewas,Kannod APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,7080,7150,7150.0
+Madhya Pradesh,Narsinghpur,Narsinghpur APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6400,7200,7200.0
+Madhya Pradesh,Hoshangabad,Pipariya APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,4900,6980,6980.0
+Madhya Pradesh,Sagar,Khurai APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6490,6751,6751.0
+Madhya Pradesh,Sagar,Bina APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,4601,6442,6442.0
+Madhya Pradesh,Narsinghpur,Kareli APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6330,6832,6832.0
+Madhya Pradesh,Raisen,Raisen APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,4210,5840,5840.0
+Madhya Pradesh,Hoshangabad,Banapura APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,4700,7351,7000.0
+Madhya Pradesh,Sehore,Nasrullaganj APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,1000,6744,6550.0
+Madhya Pradesh,Jabalpur,Paatan APMC,Tur,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,8365,9320,9320.0
+Madhya Pradesh,Narsinghpur,Kareli APMC,Tur,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,6800,6800,6800.0
+Madhya Pradesh,Jabalpur,Paatan APMC,Tur,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,8245,9300,8955.0
+Madhya Pradesh,Shehdol,Beohari APMC,Tur,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,7400,7750,7500.0
+Madhya Pradesh,Shivpuri,Kolaras APMC,Tur,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,2500,2500,2500.0
+Andhra Pradesh,Prakasam,Kondapi APMC,Tur,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,5500,6000,5800.0
+Andhra Pradesh,Ananthapuramu,Tadipatri APMC,Tur,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,5400,5800,5600.0
+Andhra Pradesh,Nandyal,Nandikotkur APMC,Tur,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,5450,5650,5550.0
+Andhra Pradesh,YSR Kadapa,Jammalamadugu APMC,Tur,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,6000,6400,6200.0
+Madhya Pradesh,Morena,Kailaras APMC,Tur,Chili Red,Geeli Mirchi,2026-07-29,2200,2200,2200.0
+Andhra Pradesh,Bapatla,Parchur APMC,Tur,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,5500,6000,5750.0
+Andhra Pradesh,Markapuram,Cumbum APMC,Tur,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,5750,5900,5850.0
+Andhra Pradesh,Markapuram,Markapur APMC,Tur,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,5450,5450,5450.0
+Uttar Pradesh,Sambhal,Muradabad APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,7750,7750,7750.0
+Andhra Pradesh,Ananthapuramu,Guntakal APMC,Tur,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,6000,6300,6150.0
+Andhra Pradesh,YSR Kadapa,Proddatur APMC,Tur,Bengal Gram(Gram)(Whole),Jawari/Local,2026-07-29,6450,6450,6450.0
+Andhra Pradesh,Palnadu,Narasaraopet APMC,Tur,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,6200,6200,6200.0
+Andhra Pradesh,Prakasam,Addanki APMC,Tur,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,6000,6040,6020.0
+Andhra Pradesh,Markapuram,Giddalur APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,5800,6000,5900.0
+Andhra Pradesh,Krishna,Divi (HQ-Avanigadda) APMC,Tur,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,8250,9000,8500.0
+Andhra Pradesh,Prakasam,Maddipadu APMC,Tur,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,6000,6000,6000.0
+Madhya Pradesh,Shivpuri,Kolaras APMC,Tur,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6040,7105,7105.0
+Madhya Pradesh,Vidisha,Vidisha APMC,Tur,Lentil(Masur)(Whole),Masur Dal,2026-07-29,5930,6210,6210.0
+Madhya Pradesh,Shajapur,Agar APMC,Tur,Lentil(Masur)(Whole),Masur Dal,2026-07-29,5400,6100,6100.0
+Madhya Pradesh,Shivpuri,Kolaras APMC,Tur,Lentil(Masur)(Whole),Masur Dal,2026-07-29,5800,5800,5800.0
+Madhya Pradesh,Chhatarpur,LavKush Nagar(Laundi) APMC,Tur,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6000,6000,6000.0
+Madhya Pradesh,Guna,Guna APMC,Tur,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6100,6100,6100.0
+Madhya Pradesh,Vidisha,Ganjbasoda APMC,Tur,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6265,6315,6265.0
+Madhya Pradesh,Sagar,Khurai APMC,Tur,Lentil(Masur)(Whole),Masur Dal,2026-07-29,5650,6840,6840.0
+Madhya Pradesh,Sagar,Rahatgarh APMC,Tur,Lentil(Masur)(Whole),Local,2026-07-29,5200,5200,5200.0
+Madhya Pradesh,Sagar,Bina APMC,Tur,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6005,6575,6575.0
+Andhra Pradesh,Parvathipuram Manyam,Palakonda APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6500,6500,6500.0
+Uttar Pradesh,Bareilly,Bareilly APMC,Tur,Green Gram(Moong)(Whole),Other,2026-07-29,9200,9200,9200.0
+Andhra Pradesh,Anakapally,Payakaraopeta APMC,Tur,Green Gram(Moong)(Whole),Local,2026-07-29,8748,8768,8758.0
+Andhra Pradesh,Palnadu,Narasaraopet APMC,Tur,Green Gram(Moong)(Whole),Local (Whole),2026-07-29,7000,7000,7000.0
+Uttar Pradesh,Lalitpur,Lalitpur APMC,Tur,Green Gram(Moong)(Whole),Other,2026-07-29,8768,8768,8768.0
+Andhra Pradesh,Palnadu,Ipur APMC,Tur,Green Gram(Moong)(Whole),Local,2026-07-29,7500,8500,7900.0
+Uttar Pradesh,Firozabad,Tundla APMC,Tur,Green Gram(Moong)(Whole),Other,2026-07-29,7000,7360,7128.92
+Uttar Pradesh,Agra,Agra APMC,Tur,Green Gram(Moong)(Whole),Other,2026-07-29,8768,8768,8768.0
+Andhra Pradesh,Bapatla,Parchur APMC,Tur,Black Gram(Urd Beans)(Whole),Local,2026-07-29,8000,8500,8250.0
+Andhra Pradesh,Guntur,Ponnur APMC,Tur,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,9800,10000,9900.0
+Andhra Pradesh,Krishna,Pedana APMC,Tur,Black Gram(Urd Beans)(Whole),Local,2026-07-29,7800,7950,7850.0
+Andhra Pradesh,Krishna,Movva (HQ-Kuchipudi) APMC,Tur,Black Gram(Urd Beans)(Whole),Local,2026-07-29,8500,8500,8500.0
+Andhra Pradesh,Bapatla,Kuchinapudi APMC,Tur,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,10800,11000,10900.0
+Andhra Pradesh,Bapatla,Parchur APMC,Tur,Chili Red,Dry,2026-07-29,18000,20000,19000.0
+Andhra Pradesh,Palnadu,Gurazala APMC,Tur,Chili Red,Red,2026-07-29,17000,28500,25000.0
+Andhra Pradesh,Parvathipuram Manyam,Palakonda APMC,Tur,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,7500,7500,7500.0
+Andhra Pradesh,Krishna,Gannavaram APMC,Tur,Black Gram(Urd Beans)(Whole),Desi,2026-07-29,7600,7600,7600.0
+Andhra Pradesh,Tirupathi,Venkatagiri APMC,Tur,Black Gram(Urd Beans)(Whole),Local,2026-07-29,7350,8000,7700.0
+Andhra Pradesh,Palnadu,Ipur APMC,Tur,Black Gram(Urd Beans)(Whole),Local,2026-07-29,7500,8000,7600.0
+Andhra Pradesh,Palnadu,Narasaraopet APMC,Tur,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,9000,9000,9000.0
+Andhra Pradesh,Palnadu,Gurazala APMC,Tur,Chili Red,Red,2026-07-29,15000,22500,19500.0
+Uttar Pradesh,Aligarh,Aligarh APMC,Tur,Pegeon Pea(Arhar Fali),Other,2026-07-29,10786,10786,10786.0
+Uttar Pradesh,Bareilly,Bareilly APMC,Tur,Pegeon Pea(Arhar Fali),Other,2026-07-29,10000,10000,10000.0
+Uttar Pradesh,Gorakhpur,Gorakhpur APMC,Tur,Pegeon Pea(Arhar Fali),Other,2026-07-29,10601,10601,10601.0
+Uttar Pradesh,Aligarh,Aligarh APMC,Tur,Gram Raw(Chholia),Other,2026-07-29,6500,7390,7023.53
+Uttar Pradesh,Bareilly,Bareilly APMC,Tur,Gram Raw(Chholia),Other,2026-07-29,6500,7200,6875.93
+Uttar Pradesh,Balrampur,Tulsipur APMC,Tur,Lentil(Masur)(Whole),Masoor Gola,2026-07-29,8050,8150,8100.0
+Uttar Pradesh,Chitrakut,Karvi APMC,Tur,Gram Raw(Chholia),Other,2026-07-29,5900,5900,5900.0
+Uttar Pradesh,Agra,Agra APMC,Tur,Gram Raw(Chholia),Other,2026-07-29,6225,6225,6225.0
+Uttar Pradesh,Bareilly,Bareilly APMC,Tur,Green Gram Dal(Moong Dal),Other,2026-07-29,8801,9450,9060.6
+Uttar Pradesh,Aligarh,Aligarh APMC,Tur,Black Gram Dal(Urd Dal),Other,2026-07-29,9500,10000,9823.53
+Uttar Pradesh,Aligarh,Aligarh APMC,Tur,Green Gram Dal(Moong Dal),Other,2026-07-29,8960,8960,8960.0
+Uttar Pradesh,Aligarh,Aligarh APMC,Tur,Bengal Gram Dal(Chana Dal),Other,2026-07-29,6775,6775,6775.0
+Andhra Pradesh,Krishna,Gudiwada APMC,Tur,Black Gram Dal(Urd Dal),Local,2026-07-29,9300,9300,9300.0
+Andhra Pradesh,Krishna,Vuyyur APMC,Tur,Black Gram Dal(Urd Dal),Local,2026-07-29,9300,9500,9400.0
+Uttar Pradesh,Bijnor,Bijnaur APMC,Tur,Bengal Gram Dal(Chana Dal),Other,2026-07-29,7075,7075,7075.0
+Andhra Pradesh,Visakhapatnam,Pendurthi APMC,Tur,Black Gram Dal(Urd Dal),Black Gram Dal,2026-07-29,7600,7600,7600.0
+Madhya Pradesh,Harda,Sirali APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6880,6880,6880.0
+Madhya Pradesh,Khargone,Sanawad APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6855,7200,6905.0
+Madhya Pradesh,Guna,Guna APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6500,7260,7260.0
+Madhya Pradesh,Vidisha,Ganjbasoda APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6300,6905,6905.0
+Madhya Pradesh,Vidisha,Vidisha APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,5380,7120,7120.0
+Madhya Pradesh,Sehore,Rehati APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6360,6360,6360.0
+Madhya Pradesh,Harda,Khirakiya APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6200,7224,7224.0
+Madhya Pradesh,Hoshangabad,Semriharchand APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,5701,6950,6950.0
+Madhya Pradesh,Morena,Morena APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6380,6855,6855.0
+Madhya Pradesh,Khargone,Khargone APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6800,7126,7126.0
+Madhya Pradesh,Dewas,Kannod APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,7080,7150,7150.0
+Madhya Pradesh,Narsinghpur,Narsinghpur APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6400,7200,7200.0
+Madhya Pradesh,Hoshangabad,Pipariya APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,4900,6980,6980.0
+Madhya Pradesh,Sagar,Khurai APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6490,6751,6751.0
+Madhya Pradesh,Dewas,Loharda APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6475,6475,6475.0
+Madhya Pradesh,Dhar,Dhamnod APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6800,6800,6800.0
+Madhya Pradesh,Dewas,Khategaon APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,300,7336,5700.0
+Madhya Pradesh,Chhindwara,Chaurai APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,5586,5586,5586.0
+Madhya Pradesh,Sehore,Nasrullaganj APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,1000,6883,6651.0
+Madhya Pradesh,Sagar,Bina APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,4601,6442,6442.0
+Madhya Pradesh,Narsinghpur,Kareli APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6330,6832,6832.0
+Madhya Pradesh,Raisen,Raisen APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,4210,5840,5840.0
+Madhya Pradesh,Hoshangabad,Banapura APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,4700,7351,7000.0
+Madhya Pradesh,Sehore,Nasrullaganj APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,1000,6744,6550.0
+Uttar Pradesh,Bareilly,Bareilly APMC,Moong,Green Gram(Moong)(Whole),Other,2026-07-29,9200,9200,9200.0
+Andhra Pradesh,Anakapally,Payakaraopeta APMC,Moong,Green Gram(Moong)(Whole),Local,2026-07-29,8748,8768,8758.0
+Andhra Pradesh,Palnadu,Narasaraopet APMC,Moong,Green Gram(Moong)(Whole),Local (Whole),2026-07-29,7000,7000,7000.0
+Andhra Pradesh,Parvathipuram Manyam,Palakonda APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6500,6500,6500.0
+Uttar Pradesh,Lalitpur,Lalitpur APMC,Moong,Green Gram(Moong)(Whole),Other,2026-07-29,8768,8768,8768.0
+Andhra Pradesh,Palnadu,Ipur APMC,Moong,Green Gram(Moong)(Whole),Local,2026-07-29,7500,8500,7900.0
+Uttar Pradesh,Firozabad,Tundla APMC,Moong,Green Gram(Moong)(Whole),Other,2026-07-29,7000,7360,7128.92
+Uttar Pradesh,Agra,Agra APMC,Moong,Green Gram(Moong)(Whole),Other,2026-07-29,8768,8768,8768.0
+Madhya Pradesh,Chhatarpur,LavKush Nagar(Laundi) APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5365,5415,5415.0
+Madhya Pradesh,Chhatarpur,LavKush Nagar(Laundi) APMC,Moong,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5850,6000,6000.0
+Madhya Pradesh,Sagar,Khurai APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5466,6311,6311.0
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6005,6005,6005.0
+Madhya Pradesh,Chhatarpur,LavKush Nagar(Laundi) APMC,Moong,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5400,5800,5800.0
+Madhya Pradesh,Narsinghpur,Kareli APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6211,6869,6869.0
+Madhya Pradesh,Vidisha,Sironj APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6051,6076,6076.0
+Madhya Pradesh,Harda,Khirakiya APMC,Moong,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5500,5500,5500.0
+Madhya Pradesh,Guna,Guna APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5560,6085,6085.0
+Madhya Pradesh,Dhar,Dhar APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5670,5930,5930.0
+Madhya Pradesh,Neemuch,Manasa APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5751,5980,5980.0
+Madhya Pradesh,Sehore,Nasrullaganj APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6044,6044,6044.0
+Madhya Pradesh,Sagar,Bina APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5240,6143,6143.0
+Madhya Pradesh,Sagar,Rahatgarh APMC,Moong,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5600,5600,5600.0
+Madhya Pradesh,Shivpuri,Kolaras APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5500,6035,6035.0
+Madhya Pradesh,Ashoknagar,Ashoknagar APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5935,6230,5935.0
+Madhya Pradesh,Raisen,Raisen APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5905,5905,5905.0
+Madhya Pradesh,Chhindwara,Chaurai APMC,Moong,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5851,5851,5851.0
+Madhya Pradesh,Mandsaur,Sitmau APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5000,5000,5000.0
+Madhya Pradesh,Khargone,Sanawad APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,7500,7500,7500.0
+Madhya Pradesh,Vidisha,Ganjbasoda APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5700,6200,6200.0
+Madhya Pradesh,Hoshangabad,Pipariya APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6000,6000,6000.0
+Madhya Pradesh,Vidisha,Vidisha APMC,Moong,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5200,5200,5200.0
+Madhya Pradesh,Jabalpur,Paatan APMC,Moong,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,8365,9320,9320.0
+Madhya Pradesh,Narsinghpur,Kareli APMC,Moong,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,6800,6800,6800.0
+Madhya Pradesh,Jabalpur,Paatan APMC,Moong,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,8245,9300,8955.0
+Madhya Pradesh,Shehdol,Beohari APMC,Moong,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,7400,7750,7500.0
+Madhya Pradesh,Narsinghpur,Kareli APMC,Moong,Red gram/Arhar/Tur(whole),Arhar Dal(Tur),2026-07-29,6325,7300,7300.0
+Madhya Pradesh,Chhindwara,Saunsar APMC,Moong,Red gram/Arhar/Tur(whole),Arhar Dal(Tur),2026-07-29,7500,7500,7500.0
+Madhya Pradesh,Shivpuri,Kolaras APMC,Moong,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,2500,2500,2500.0
+Andhra Pradesh,Prakasam,Kondapi APMC,Moong,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,5500,6000,5800.0
+Andhra Pradesh,Ananthapuramu,Tadipatri APMC,Moong,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,5400,5800,5600.0
+Andhra Pradesh,Nandyal,Nandikotkur APMC,Moong,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,5450,5650,5550.0
+Andhra Pradesh,YSR Kadapa,Jammalamadugu APMC,Moong,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,6000,6400,6200.0
+Andhra Pradesh,Bapatla,Parchur APMC,Moong,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,5500,6000,5750.0
+Andhra Pradesh,Markapuram,Cumbum APMC,Moong,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,5750,5900,5850.0
+Andhra Pradesh,Markapuram,Markapur APMC,Moong,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,5450,5450,5450.0
+Uttar Pradesh,Sambhal,Muradabad APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,7750,7750,7750.0
+Andhra Pradesh,Ananthapuramu,Guntakal APMC,Moong,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,6000,6300,6150.0
+Andhra Pradesh,YSR Kadapa,Proddatur APMC,Moong,Bengal Gram(Gram)(Whole),Jawari/Local,2026-07-29,6450,6450,6450.0
+Andhra Pradesh,Palnadu,Narasaraopet APMC,Moong,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,6200,6200,6200.0
+Andhra Pradesh,Prakasam,Addanki APMC,Moong,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,6000,6040,6020.0
+Andhra Pradesh,Markapuram,Giddalur APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,5800,6000,5900.0
+Andhra Pradesh,Krishna,Divi (HQ-Avanigadda) APMC,Moong,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,8250,9000,8500.0
+Andhra Pradesh,Prakasam,Maddipadu APMC,Moong,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,6000,6000,6000.0
+Uttar Pradesh,Bareilly,Bareilly APMC,Moong,Green Gram Dal(Moong Dal),Other,2026-07-29,8801,9450,9060.6
+Uttar Pradesh,Aligarh,Aligarh APMC,Moong,Green Gram Dal(Moong Dal),Other,2026-07-29,8960,8960,8960.0
+Madhya Pradesh,Shivpuri,Kolaras APMC,Moong,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6040,7105,7105.0
+Madhya Pradesh,Vidisha,Vidisha APMC,Moong,Lentil(Masur)(Whole),Masur Dal,2026-07-29,5930,6210,6210.0
+Madhya Pradesh,Shajapur,Agar APMC,Moong,Lentil(Masur)(Whole),Masur Dal,2026-07-29,5400,6100,6100.0
+Madhya Pradesh,Shivpuri,Kolaras APMC,Moong,Lentil(Masur)(Whole),Masur Dal,2026-07-29,5800,5800,5800.0
+Madhya Pradesh,Chhatarpur,LavKush Nagar(Laundi) APMC,Moong,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6000,6000,6000.0
+Madhya Pradesh,Guna,Guna APMC,Moong,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6100,6100,6100.0
+Madhya Pradesh,Vidisha,Ganjbasoda APMC,Moong,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6265,6315,6265.0
+Madhya Pradesh,Sagar,Khurai APMC,Moong,Lentil(Masur)(Whole),Masur Dal,2026-07-29,5650,6840,6840.0
+Madhya Pradesh,Sagar,Rahatgarh APMC,Moong,Lentil(Masur)(Whole),Local,2026-07-29,5200,5200,5200.0
+Madhya Pradesh,Sagar,Bina APMC,Moong,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6005,6575,6575.0
+Madhya Pradesh,Ujjain,Badnagar APMC,Moong,Green Peas,Pea,2026-07-29,3126,3380,3380.0
+Madhya Pradesh,Chhatarpur,LavKush Nagar(Laundi) APMC,Moong,Green Peas,Pea,2026-07-29,3850,4100,4100.0
+Madhya Pradesh,Badwani,Sendhwa(F&V) APMC,Moong,Green Chilli,Green Chilly,2026-07-29,1000,1400,1200.0
+Madhya Pradesh,Indore,Indore(F&V) APMC,Moong,Green Chilli,Green Chilly,2026-07-29,1500,4000,3000.0
+Madhya Pradesh,Guna,Guna APMC,Moong,Green Peas,Pea,2026-07-29,4120,4120,4120.0
+Madhya Pradesh,Ujjain,Ujjain(F&V) APMC,Moong,Ginger(Green),Green Ginger,2026-07-29,735,2240,1427.0
+Madhya Pradesh,Indore,Indore(F&V) APMC,Moong,Ginger(Green),Green Ginger,2026-07-29,4000,10000,8000.0
+Madhya Pradesh,Sagar,Bina APMC,Moong,Green Peas,Pea,2026-07-29,3356,3700,3700.0
+Madhya Pradesh,Khandwa,Sanawad(F&V) APMC,Moong,Green Chilli,Green Chilly,2026-07-29,3500,4000,3800.0
+Madhya Pradesh,Badwani,Badwani(F&V) APMC,Moong,Ginger(Green),Green Ginger,2026-07-29,6000,6000,6000.0
+Madhya Pradesh,Burhanpur,Burhanpur(F&V) APMC,Moong,Green Chilli,Green Chilly,2026-07-29,2500,6000,4500.0
+Madhya Pradesh,Dewas,Dewas(F&V) APMC,Moong,Green Chilli,Other,2026-07-29,1500,3500,1800.0
+Madhya Pradesh,Ujjain,Ujjain(F&V) APMC,Moong,Green Chilli,Green Chilly,2026-07-29,740,2325,1459.0
+Andhra Pradesh,Bapatla,Parchur APMC,Moong,Black Gram(Urd Beans)(Whole),Local,2026-07-29,8000,8500,8250.0
+Andhra Pradesh,Guntur,Ponnur APMC,Moong,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,9800,10000,9900.0
+Andhra Pradesh,Krishna,Pedana APMC,Moong,Black Gram(Urd Beans)(Whole),Local,2026-07-29,7800,7950,7850.0
+Andhra Pradesh,Krishna,Movva (HQ-Kuchipudi) APMC,Moong,Black Gram(Urd Beans)(Whole),Local,2026-07-29,8500,8500,8500.0
+Andhra Pradesh,Bapatla,Kuchinapudi APMC,Moong,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,10800,11000,10900.0
+Madhya Pradesh,Indore,Sanwer(F&V) APMC,Moong,Green Chilli,Green Chilly,2026-07-29,5000,6000,5500.0
+Madhya Pradesh,Badwani,Badwani(F&V) APMC,Moong,Green Chilli,Green Chilly,2026-07-29,2400,2400,2400.0
+Madhya Pradesh,Sagar,Khurai APMC,Moong,Green Peas,Pea,2026-07-29,2701,2701,2701.0
+Andhra Pradesh,Palnadu,Macharla APMC,Moong,Red gram/Arhar/Tur(whole),Local,2026-07-29,7790,7790,7790.0
+Andhra Pradesh,Parvathipuram Manyam,Palakonda APMC,Moong,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,7500,7500,7500.0
+Andhra Pradesh,Palnadu,Narasaraopet APMC,Moong,Red gram/Arhar/Tur(whole),Desi(Whole),2026-07-29,8000,8000,8000.0
+Andhra Pradesh,Ananthapuramu,Guntakal APMC,Moong,Red gram/Arhar/Tur(whole),Local,2026-07-29,7000,8000,7500.0
+Andhra Pradesh,Kurnool,Kurnool APMC,Moong,Red gram/Arhar/Tur(whole),Local,2026-07-29,6297,8112,7972.0
+Andhra Pradesh,Krishna,Gannavaram APMC,Moong,Black Gram(Urd Beans)(Whole),Desi,2026-07-29,7600,7600,7600.0
+Andhra Pradesh,Ananthapuramu,Tadipatri APMC,Moong,Red gram/Arhar/Tur(whole),Local,2026-07-29,5700,6100,5800.0
+Andhra Pradesh,Palnadu,Ipur APMC,Moong,Red gram/Arhar/Tur(whole),Local,2026-07-29,7540,8000,7650.0
+Andhra Pradesh,Markapuram,Kanigiri APMC,Moong,Red gram/Arhar/Tur(whole),(Whole),2026-07-29,8600,8800,8700.0
+Andhra Pradesh,Ananthapuramu,Gooti APMC,Moong,Red gram/Arhar/Tur(whole),Local,2026-07-29,4986,6075,5479.0
+Andhra Pradesh,Tirupathi,Venkatagiri APMC,Moong,Black Gram(Urd Beans)(Whole),Local,2026-07-29,7350,8000,7700.0
+Andhra Pradesh,Palnadu,Ipur APMC,Moong,Black Gram(Urd Beans)(Whole),Local,2026-07-29,7500,8000,7600.0
+Andhra Pradesh,Markapuram,Podili APMC,Moong,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,8200,8200,8200.0
+Andhra Pradesh,Palnadu,Narasaraopet APMC,Moong,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,9000,9000,9000.0
+Madhya Pradesh,Morena,Morena APMC,Moong,Other green and fresh vegetables,Other green and fresh vegetables,2026-07-29,1000,1000,1000.0
+Uttar Pradesh,Aligarh,Aligarh APMC,Moong,Gram Raw(Chholia),Other,2026-07-29,6500,7390,7023.53
+Uttar Pradesh,Bareilly,Bareilly APMC,Moong,Gram Raw(Chholia),Other,2026-07-29,6500,7200,6875.93
+Uttar Pradesh,Balrampur,Tulsipur APMC,Moong,Lentil(Masur)(Whole),Masoor Gola,2026-07-29,8050,8150,8100.0
+Uttar Pradesh,Chitrakut,Karvi APMC,Moong,Gram Raw(Chholia),Other,2026-07-29,5900,5900,5900.0
+Uttar Pradesh,Agra,Agra APMC,Moong,Gram Raw(Chholia),Other,2026-07-29,6225,6225,6225.0
+Uttar Pradesh,Aligarh,Aligarh APMC,Moong,Black Gram Dal(Urd Dal),Other,2026-07-29,9500,10000,9823.53
+Uttar Pradesh,Aligarh,Aligarh APMC,Moong,Bengal Gram Dal(Chana Dal),Other,2026-07-29,6775,6775,6775.0
+Andhra Pradesh,Krishna,Gudiwada APMC,Moong,Black Gram Dal(Urd Dal),Local,2026-07-29,9300,9300,9300.0
+Andhra Pradesh,Krishna,Vuyyur APMC,Moong,Black Gram Dal(Urd Dal),Local,2026-07-29,9300,9500,9400.0
+Uttar Pradesh,Bijnor,Bijnaur APMC,Moong,Bengal Gram Dal(Chana Dal),Other,2026-07-29,7075,7075,7075.0
+Andhra Pradesh,Visakhapatnam,Pendurthi APMC,Moong,Black Gram Dal(Urd Dal),Black Gram Dal,2026-07-29,7600,7600,7600.0
+Uttar Pradesh,Bulandshahar,Sikanderabad APMC,Moong,Green Chilli,Other,2026-07-29,3500,3800,3575.0
+Uttar Pradesh,Varanasi,Varanasi APMC,Moong,Green Chilli,Other,2026-07-29,1500,1500,1500.0
+Uttar Pradesh,Bulandshahar,Buland Shahr APMC,Moong,Ginger(Green),Other,2026-07-29,8000,8000,8000.0
+Uttar Pradesh,Bulandshahar,Khurja APMC,Moong,Ginger(Green),Other,2026-07-29,5500,5500,5500.0
+Uttar Pradesh,Hardoi,Madhoganj APMC,Moong,Green Chilli,Other,2026-07-29,2000,2000,2000.0
+Uttar Pradesh,Ghazipur,Yusufpur APMC,Moong,Green Chilli,Other,2026-07-29,1500,1500,1500.0
+Himachal Pradesh,Mandi,PMY Kangni Mandi,Moong,Ginger(Green),Green Ginger,2026-07-29,12000,18000,15000.0
+Uttar Pradesh,Baghpat,Baraut APMC,Moong,Green Chilli,Other,2026-07-29,3000,3000,3000.0
+Uttar Pradesh,Jhansi,Baruwasagar APMC,Moong,Ginger(Green),Other,2026-07-29,11000,11000,11000.0
+Arunachal Pradesh,Lower Subansiri,Ziro APMC,Moong,Ginger(Green),Other,2026-07-29,6000,6000,6000.0
+Uttar Pradesh,Ghaziabad,Noida APMC,Moong,Ginger(Green),Other,2026-07-29,10000,10000,10000.0
+Uttar Pradesh,Shamli,Shamli APMC,Moong,Green Chilli,Other,2026-07-29,2500,2500,2500.0
+Himachal Pradesh,Mandi,PMY Kangni Mandi,Moong,Green Chilli,Green Chilly,2026-07-29,4000,7000,5000.0
+Himachal Pradesh,Kangra,SMY Nagrota Bagwan,Moong,Green Chilli,Green Chilly,2026-07-29,4000,4500,4200.0
+Uttar Pradesh,Jaunpur,Jaunpur APMC,Moong,Ginger(Green),Other,2026-07-29,9000,9000,9000.0
+Himachal Pradesh,Shimla,PMY Dhalli Shimla,Moong,Ginger(Green),Green Ginger,2026-07-29,8000,10000,8000.0
+Himachal Pradesh,Kangra,SMY Jaisinghpur,Moong,Ginger(Green),Green Ginger,2026-07-29,20000,22000,21000.0
+Uttar Pradesh,Saharanpur,Gangoh APMC,Moong,Green Chilli,Other,2026-07-29,4000,7000,5335.56
+Uttar Pradesh,Sant Kabir Nagar,Khalilabad APMC,Moong,Green Chilli,Green Chilly,2026-07-29,2000,2200,2150.0
+Uttar Pradesh,Agra,Agra APMC,Moong,Green Chilli,Other,2026-07-29,1500,1500,1500.0
+Uttar Pradesh,Ghaziabad,Noida APMC,Moong,Green Chilli,Other,2026-07-29,4000,4000,4000.0
+Uttar Pradesh,Bulandshahar,Sikanderabad APMC,Moong,Ginger(Green),Other,2026-07-29,8000,8000,8000.0
+Uttar Pradesh,Bulandshahar,Khurja APMC,Moong,Green Chilli,Other,2026-07-29,1800,1800,1800.0
+Uttar Pradesh,Shamli,Thanabhavan APMC,Moong,Green Chilli,Other,2026-07-29,2000,2000,2000.0
+Himachal Pradesh,Solan,PMY Kather Solan,Moong,Ginger(Green),Other,2026-07-29,9000,16000,13000.0
+Himachal Pradesh,Solan,PMY Kather Solan,Moong,Green Chilli,Other,2026-07-29,3000,7000,6000.0
+Himachal Pradesh,Kangra,PMY Kangra,Moong,Ginger(Green),Green Ginger,2026-07-29,17000,18000,17500.0
+Himachal Pradesh,Kullu,SMY Bhuntar,Moong,Green Chilli,Other,2026-07-29,4000,5000,4500.0
+Himachal Pradesh,Kangra,SMY Palampur,Moong,Ginger(Green),Green Ginger,2026-07-29,19000,20000,19500.0
+Himachal Pradesh,Kangra,SMY Palampur,Moong,Green Chilli,Green Chilly,2026-07-29,4000,5000,4500.0
+Himachal Pradesh,Una,SMY Takarla,Moong,Green Chilli,Green Chilly,2026-07-29,1500,3000,2400.0
+Arunachal Pradesh,Lower Subansiri,Ziro APMC,Moong,Green Chilli,Other,2026-07-29,6000,6000,6000.0
+Uttar Pradesh,Mau(Maunathbhanjan),Kopaganj APMC,Moong,Green Chilli,Other,2026-07-29,2000,2000,2000.0
+Uttar Pradesh,Agra,Achnera APMC,Moong,Green Chilli,Other,2026-07-29,3600,3600,3600.0
+Uttar Pradesh,Bareilly,Bareilly APMC,Moong,Green Chilli,Other,2026-07-29,2000,2000,2000.0
+Uttar Pradesh,Chandauli,Chandoli APMC,Moong,Green Chilli,Other,2026-07-29,1500,1500,1500.0
+Uttar Pradesh,Mathura,Mathura APMC,Moong,Green Chilli,Other,2026-07-29,2500,3000,2961.54
+Himachal Pradesh,Kullu,PMY Kullu,Moong,Ginger(Green),Other,2026-07-29,15000,16000,15500.0
+Himachal Pradesh,Kullu,PMY Kullu,Moong,Green Chilli,Other,2026-07-29,4500,5000,4700.0
+Uttar Pradesh,Badaun,Shahaswan APMC,Moong,Banana - Green,Banana - Green,2026-07-29,1700,1900,1800.0
+Uttar Pradesh,Jaunpur,Jaunpur APMC,Moong,Green Chilli,Other,2026-07-29,4200,4200,4200.0
+Uttar Pradesh,Gautam Budh Nagar,Jewar APMC,Moong,Ginger(Green),Other,2026-07-29,6000,6000,6000.0
+Uttar Pradesh,Khiri (Lakhimpur),Maigalganj APMC,Moong,Banana - Green,Banana - Green,2026-07-29,1880,1925,1900.0
+Himachal Pradesh,Kangra,SMY Baijnath,Moong,Green Chilli,Green Chilly,2026-07-29,3500,4200,4000.0
+Himachal Pradesh,Hamirpur,PMY Hamirpur,Moong,Ginger(Green),Other,2026-07-29,18000,20000,19000.0
+Himachal Pradesh,Mandi,SMY Dhanotu,Moong,Green Chilli,Green Chilly,2026-07-29,3000,6000,4500.0
+Himachal Pradesh,Kangra,SMY Dharamshala,Moong,Ginger(Green),Green Ginger,2026-07-29,15000,17000,16000.0
+Uttar Pradesh,Aligarh,Aligarh APMC,Moong,Green Chilli,Other,2026-07-29,2000,2000,2000.0
+Uttar Pradesh,Jalaun (Orai),Konch APMC,Moong,Green Chilli,Other,2026-07-29,2600,2600,2600.0
+Himachal Pradesh,Hamirpur,SMY Nadaun,Moong,Green Chilli,Other,2026-07-29,5000,5000,5000.0
+Uttar Pradesh,Hardoi,Hardoi APMC,Moong,Green Chilli,Other,2026-07-29,3000,3000,3000.0
+Andhra Pradesh,Chittor,Palamaner APMC,Moong,Green Chilli,Green Chilly,2026-07-29,2000,4000,3000.0
+Himachal Pradesh,Shimla,PMY Dhalli Shimla,Moong,Green Chilli,Green Chilly,2026-07-29,4500,5000,4500.0
+Himachal Pradesh,Kangra,PMY Kangra,Moong,Green Chilli,Green Chilly,2026-07-29,4500,5000,4700.0
+Uttar Pradesh,Amroha,Hasanpur APMC,Moong,Banana - Green,Banana - Green,2026-07-29,1450,1520,1500.0
+Himachal Pradesh,Kangra,SMY Jaisinghpur,Moong,Green Chilli,Green Chilly,2026-07-29,4500,5500,5000.0
+Himachal Pradesh,Chamba,PMY Chamba,Moong,Ginger(Green),Other,2026-07-29,20000,22000,21000.0
+Himachal Pradesh,Chamba,PMY Chamba,Moong,Green Chilli,Green Chilly,2026-07-29,4000,5000,4500.0
+Himachal Pradesh,Hamirpur,PMY Hamirpur,Moong,Green Chilli,Green Chilly,2026-07-29,5000,5000,5000.0
+Himachal Pradesh,Kullu,SMY Bhuntar,Moong,Ginger(Green),Other,2026-07-29,14000,18000,16000.0
+Himachal Pradesh,Mandi,SMY Dhanotu,Moong,Ginger(Green),Green Ginger,2026-07-29,15000,20000,17500.0
+Himachal Pradesh,Kangra,SMY Dharamshala,Moong,Green Chilli,Green Chilly,2026-07-29,4500,5000,4750.0
+Madhya Pradesh,Chhatarpur,LavKush Nagar(Laundi) APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5365,5415,5415.0
+Madhya Pradesh,Chhatarpur,LavKush Nagar(Laundi) APMC,Chana,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5850,6000,6000.0
+Madhya Pradesh,Sagar,Khurai APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5466,6311,6311.0
+Madhya Pradesh,Hoshangabad,Pipariya APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6000,6000,6000.0
+Madhya Pradesh,Vidisha,Vidisha APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5200,5200,5200.0
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6005,6005,6005.0
+Madhya Pradesh,Chhatarpur,LavKush Nagar(Laundi) APMC,Chana,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5400,5800,5800.0
+Madhya Pradesh,Narsinghpur,Kareli APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6211,6869,6869.0
+Madhya Pradesh,Vidisha,Sironj APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6051,6076,6076.0
+Madhya Pradesh,Harda,Khirakiya APMC,Chana,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5500,5500,5500.0
+Madhya Pradesh,Guna,Guna APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5560,6085,6085.0
+Madhya Pradesh,Dhar,Dhar APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5670,5930,5930.0
+Madhya Pradesh,Neemuch,Manasa APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5751,5980,5980.0
+Madhya Pradesh,Sehore,Nasrullaganj APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,6044,6044,6044.0
+Madhya Pradesh,Sagar,Bina APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5240,6143,6143.0
+Madhya Pradesh,Sagar,Rahatgarh APMC,Chana,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5600,5600,5600.0
+Madhya Pradesh,Shivpuri,Kolaras APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5500,6035,6035.0
+Madhya Pradesh,Ashoknagar,Ashoknagar APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5935,6230,5935.0
+Madhya Pradesh,Raisen,Raisen APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5905,5905,5905.0
+Madhya Pradesh,Chhindwara,Chaurai APMC,Chana,Bengal Gram(Gram)(Whole),Desi (F.A.Q. Split),2026-07-29,5851,5851,5851.0
+Madhya Pradesh,Mandsaur,Sitmau APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5000,5000,5000.0
+Madhya Pradesh,Khargone,Sanawad APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,7500,7500,7500.0
+Madhya Pradesh,Vidisha,Ganjbasoda APMC,Chana,Bengal Gram(Gram)(Whole),Gram,2026-07-29,5700,6200,6200.0
+Andhra Pradesh,Prakasam,Kondapi APMC,Chana,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,5500,6000,5800.0
+Andhra Pradesh,Ananthapuramu,Tadipatri APMC,Chana,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,5400,5800,5600.0
+Andhra Pradesh,Nandyal,Nandikotkur APMC,Chana,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,5450,5650,5550.0
+Andhra Pradesh,YSR Kadapa,Jammalamadugu APMC,Chana,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,6000,6400,6200.0
+Andhra Pradesh,Bapatla,Parchur APMC,Chana,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,5500,6000,5750.0
+Andhra Pradesh,Markapuram,Cumbum APMC,Chana,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,5750,5900,5850.0
+Andhra Pradesh,Markapuram,Markapur APMC,Chana,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,5450,5450,5450.0
+Uttar Pradesh,Sambhal,Muradabad APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,7750,7750,7750.0
+Andhra Pradesh,Ananthapuramu,Guntakal APMC,Chana,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,6000,6300,6150.0
+Andhra Pradesh,YSR Kadapa,Proddatur APMC,Chana,Bengal Gram(Gram)(Whole),Jawari/Local,2026-07-29,6450,6450,6450.0
+Andhra Pradesh,Palnadu,Narasaraopet APMC,Chana,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,6200,6200,6200.0
+Andhra Pradesh,Prakasam,Maddipadu APMC,Chana,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,6000,6000,6000.0
+Andhra Pradesh,Prakasam,Addanki APMC,Chana,Bengal Gram(Gram)(Whole),Gulabi,2026-07-29,6000,6040,6020.0
+Andhra Pradesh,Markapuram,Giddalur APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,5800,6000,5900.0
+Andhra Pradesh,Krishna,Divi (HQ-Avanigadda) APMC,Chana,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,8250,9000,8500.0
+Madhya Pradesh,Harda,Sirali APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6880,6880,6880.0
+Madhya Pradesh,Khargone,Sanawad APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6855,7200,6905.0
+Madhya Pradesh,Guna,Guna APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6500,7260,7260.0
+Madhya Pradesh,Vidisha,Ganjbasoda APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6300,6905,6905.0
+Madhya Pradesh,Vidisha,Vidisha APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,5380,7120,7120.0
+Madhya Pradesh,Sehore,Rehati APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6360,6360,6360.0
+Madhya Pradesh,Harda,Khirakiya APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6200,7224,7224.0
+Madhya Pradesh,Hoshangabad,Semriharchand APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,5701,6950,6950.0
+Madhya Pradesh,Morena,Morena APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6380,6855,6855.0
+Madhya Pradesh,Khargone,Khargone APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6800,7126,7126.0
+Madhya Pradesh,Dewas,Loharda APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6475,6475,6475.0
+Madhya Pradesh,Dhar,Dhamnod APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6800,6800,6800.0
+Madhya Pradesh,Dewas,Khategaon APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,300,7336,5700.0
+Madhya Pradesh,Chhindwara,Chaurai APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,5586,5586,5586.0
+Madhya Pradesh,Sehore,Nasrullaganj APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,1000,6883,6651.0
+Madhya Pradesh,Dewas,Kannod APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,7080,7150,7150.0
+Madhya Pradesh,Narsinghpur,Narsinghpur APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6400,7200,7200.0
+Madhya Pradesh,Hoshangabad,Pipariya APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,4900,6980,6980.0
+Madhya Pradesh,Sagar,Khurai APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6490,6751,6751.0
+Madhya Pradesh,Sagar,Bina APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,4601,6442,6442.0
+Madhya Pradesh,Narsinghpur,Kareli APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6330,6832,6832.0
+Madhya Pradesh,Raisen,Raisen APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,4210,5840,5840.0
+Madhya Pradesh,Hoshangabad,Banapura APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,4700,7351,7000.0
+Madhya Pradesh,Sehore,Nasrullaganj APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,1000,6744,6550.0
+Madhya Pradesh,Jabalpur,Paatan APMC,Chana,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,8365,9320,9320.0
+Madhya Pradesh,Narsinghpur,Kareli APMC,Chana,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,6800,6800,6800.0
+Madhya Pradesh,Jabalpur,Paatan APMC,Chana,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,8245,9300,8955.0
+Madhya Pradesh,Shehdol,Beohari APMC,Chana,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,7400,7750,7500.0
+Madhya Pradesh,Narsinghpur,Kareli APMC,Chana,Red gram/Arhar/Tur(whole),Arhar Dal(Tur),2026-07-29,6325,7300,7300.0
+Madhya Pradesh,Chhindwara,Saunsar APMC,Chana,Red gram/Arhar/Tur(whole),Arhar Dal(Tur),2026-07-29,7500,7500,7500.0
+Madhya Pradesh,Shivpuri,Kolaras APMC,Chana,Black Gram(Urd Beans)(Whole),Urda/Urd,2026-07-29,2500,2500,2500.0
+Uttar Pradesh,Bareilly,Bareilly APMC,Chana,Green Gram(Moong)(Whole),Other,2026-07-29,9200,9200,9200.0
+Andhra Pradesh,Anakapally,Payakaraopeta APMC,Chana,Green Gram(Moong)(Whole),Local,2026-07-29,8748,8768,8758.0
+Andhra Pradesh,Palnadu,Narasaraopet APMC,Chana,Green Gram(Moong)(Whole),Local (Whole),2026-07-29,7000,7000,7000.0
+Andhra Pradesh,Parvathipuram Manyam,Palakonda APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6500,6500,6500.0
+Uttar Pradesh,Lalitpur,Lalitpur APMC,Chana,Green Gram(Moong)(Whole),Other,2026-07-29,8768,8768,8768.0
+Andhra Pradesh,Palnadu,Ipur APMC,Chana,Green Gram(Moong)(Whole),Local,2026-07-29,7500,8500,7900.0
+Uttar Pradesh,Firozabad,Tundla APMC,Chana,Green Gram(Moong)(Whole),Other,2026-07-29,7000,7360,7128.92
+Uttar Pradesh,Agra,Agra APMC,Chana,Green Gram(Moong)(Whole),Other,2026-07-29,8768,8768,8768.0
+Uttar Pradesh,Bijnor,Bijnaur APMC,Chana,Bengal Gram Dal(Chana Dal),Other,2026-07-29,7075,7075,7075.0
+Uttar Pradesh,Aligarh,Aligarh APMC,Chana,Bengal Gram Dal(Chana Dal),Other,2026-07-29,6775,6775,6775.0
+Andhra Pradesh,Bapatla,Parchur APMC,Chana,Black Gram(Urd Beans)(Whole),Local,2026-07-29,8000,8500,8250.0
+Andhra Pradesh,Guntur,Ponnur APMC,Chana,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,9800,10000,9900.0
+Andhra Pradesh,Krishna,Pedana APMC,Chana,Black Gram(Urd Beans)(Whole),Local,2026-07-29,7800,7950,7850.0
+Andhra Pradesh,Krishna,Movva (HQ-Kuchipudi) APMC,Chana,Black Gram(Urd Beans)(Whole),Local,2026-07-29,8500,8500,8500.0
+Andhra Pradesh,Bapatla,Kuchinapudi APMC,Chana,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,10800,11000,10900.0
+Andhra Pradesh,Palnadu,Macharla APMC,Chana,Red gram/Arhar/Tur(whole),Local,2026-07-29,7790,7790,7790.0
+Andhra Pradesh,Parvathipuram Manyam,Palakonda APMC,Chana,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,7500,7500,7500.0
+Andhra Pradesh,Palnadu,Narasaraopet APMC,Chana,Red gram/Arhar/Tur(whole),Desi(Whole),2026-07-29,8000,8000,8000.0
+Andhra Pradesh,Ananthapuramu,Tadipatri APMC,Chana,Red gram/Arhar/Tur(whole),Local,2026-07-29,5700,6100,5800.0
+Andhra Pradesh,Palnadu,Ipur APMC,Chana,Red gram/Arhar/Tur(whole),Local,2026-07-29,7540,8000,7650.0
+Andhra Pradesh,Markapuram,Kanigiri APMC,Chana,Red gram/Arhar/Tur(whole),(Whole),2026-07-29,8600,8800,8700.0
+Andhra Pradesh,Ananthapuramu,Gooti APMC,Chana,Red gram/Arhar/Tur(whole),Local,2026-07-29,4986,6075,5479.0
+Andhra Pradesh,Tirupathi,Venkatagiri APMC,Chana,Black Gram(Urd Beans)(Whole),Local,2026-07-29,7350,8000,7700.0
+Andhra Pradesh,Ananthapuramu,Guntakal APMC,Chana,Red gram/Arhar/Tur(whole),Local,2026-07-29,7000,8000,7500.0
+Andhra Pradesh,Kurnool,Kurnool APMC,Chana,Red gram/Arhar/Tur(whole),Local,2026-07-29,6297,8112,7972.0
+Andhra Pradesh,Krishna,Gannavaram APMC,Chana,Black Gram(Urd Beans)(Whole),Desi,2026-07-29,7600,7600,7600.0
+Andhra Pradesh,Palnadu,Ipur APMC,Chana,Black Gram(Urd Beans)(Whole),Local,2026-07-29,7500,8000,7600.0
+Andhra Pradesh,Markapuram,Podili APMC,Chana,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,8200,8200,8200.0
+Andhra Pradesh,Palnadu,Narasaraopet APMC,Chana,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,9000,9000,9000.0
+Madhya Pradesh,Shivpuri,Kolaras APMC,Chana,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6040,7105,7105.0
+Madhya Pradesh,Vidisha,Vidisha APMC,Chana,Lentil(Masur)(Whole),Masur Dal,2026-07-29,5930,6210,6210.0
+Madhya Pradesh,Shajapur,Agar APMC,Chana,Lentil(Masur)(Whole),Masur Dal,2026-07-29,5400,6100,6100.0
+Madhya Pradesh,Shivpuri,Kolaras APMC,Chana,Lentil(Masur)(Whole),Masur Dal,2026-07-29,5800,5800,5800.0
+Madhya Pradesh,Chhatarpur,LavKush Nagar(Laundi) APMC,Chana,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6000,6000,6000.0
+Madhya Pradesh,Guna,Guna APMC,Chana,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6100,6100,6100.0
+Madhya Pradesh,Vidisha,Ganjbasoda APMC,Chana,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6265,6315,6265.0
+Madhya Pradesh,Sagar,Khurai APMC,Chana,Lentil(Masur)(Whole),Masur Dal,2026-07-29,5650,6840,6840.0
+Madhya Pradesh,Sagar,Rahatgarh APMC,Chana,Lentil(Masur)(Whole),Local,2026-07-29,5200,5200,5200.0
+Uttar Pradesh,Aligarh,Aligarh APMC,Chana,Gram Raw(Chholia),Other,2026-07-29,6500,7390,7023.53
+Uttar Pradesh,Bareilly,Bareilly APMC,Chana,Gram Raw(Chholia),Other,2026-07-29,6500,7200,6875.93
+Madhya Pradesh,Sagar,Bina APMC,Chana,Lentil(Masur)(Whole),Masur Dal,2026-07-29,6005,6575,6575.0
+Uttar Pradesh,Chitrakut,Karvi APMC,Chana,Gram Raw(Chholia),Other,2026-07-29,5900,5900,5900.0
+Uttar Pradesh,Agra,Agra APMC,Chana,Gram Raw(Chholia),Other,2026-07-29,6225,6225,6225.0
+Uttar Pradesh,Bareilly,Bareilly APMC,Chana,Green Gram Dal(Moong Dal),Other,2026-07-29,8801,9450,9060.6
+Uttar Pradesh,Aligarh,Aligarh APMC,Chana,Black Gram Dal(Urd Dal),Other,2026-07-29,9500,10000,9823.53
+Uttar Pradesh,Aligarh,Aligarh APMC,Chana,Green Gram Dal(Moong Dal),Other,2026-07-29,8960,8960,8960.0
+Andhra Pradesh,Krishna,Vuyyur APMC,Chana,Black Gram Dal(Urd Dal),Local,2026-07-29,9300,9500,9400.0
+Andhra Pradesh,Krishna,Gudiwada APMC,Chana,Black Gram Dal(Urd Dal),Local,2026-07-29,9300,9300,9300.0
+Andhra Pradesh,Visakhapatnam,Pendurthi APMC,Chana,Black Gram Dal(Urd Dal),Black Gram Dal,2026-07-29,7600,7600,7600.0
+Uttar Pradesh,Balrampur,Tulsipur APMC,Chana,Lentil(Masur)(Whole),Masoor Gola,2026-07-29,8050,8150,8100.0
+Maharashtra,Latur,Ahmedpur APMC,Tur,Red gram/Arhar/Tur(whole),Other,2026-07-29,5500,7750,6880.0
+Maharashtra,Akola,Murtizapur APMC,Tur,Red gram/Arhar/Tur(whole),Other,2026-07-29,7000,7995,7500.0
+Maharashtra,Buldhana,Buldhana APMC,Tur,Red gram/Arhar/Tur(whole),Other,2026-07-29,7000,7600,7300.0
+Maharashtra,Latur,Latur APMC,Tur,Red gram/Arhar/Tur(whole),Other,2026-07-29,8000,8450,8350.0
+Maharashtra,Akola,Akola APMC,Tur,Red gram/Arhar/Tur(whole),Other,2026-07-29,8015,8205,8100.0
+Maharashtra,Akola,Akola APMC,Tur,Red gram/Arhar/Tur(whole),Other,2026-07-29,7000,7995,7800.0
+Maharashtra,Nagpur,Nagpur APMC,Tur,Red gram/Arhar/Tur(whole),Other,2026-07-29,7300,7925,7768.0
+Maharashtra,Mumbai,Mumbai APMC,Tur,Red gram split/Arhar dal/Tur dal,Other,2026-07-29,7800,13000,11100.0
+Maharashtra,Akola,Akola APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,5880,6375,6000.0
+Maharashtra,Buldhana,Buldhana APMC,Tur,Bengal Gram(Gram)(Whole),Kabul Small,2026-07-29,7000,7500,7250.0
+Maharashtra,Mumbai,Mumbai APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,6200,7500,7050.0
+Maharashtra,Pune,Pune APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,6300,7300,6800.0
+Maharashtra,Latur,Latur APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,5875,6282,6000.0
+Maharashtra,Akola,Murtizapur APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,5880,6390,6135.0
+Maharashtra,Buldhana,Buldhana APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,5000,5500,5250.0
+Maharashtra,Nagpur,Nagpur APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,5900,6315,6211.0
+Maharashtra,Latur,Ahmedpur APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,5875,6111,5993.0
+Maharashtra,Dharashiv,Tuljapur APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,5875,6150,6000.0
+Maharashtra,Latur,Ahmedpur APMC,Tur,Green Gram(Moong)(Whole),Other,2026-07-29,6500,6500,6500.0
+Maharashtra,Pune,Pune APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,9200,9900,9550.0
+Maharashtra,Mumbai,Mumbai APMC,Tur,Green Gram(Moong)(Whole),Other,2026-07-29,8800,13000,11100.0
+Maharashtra,Akola,Akola APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,7050,7555,7180.0
+Maharashtra,Mumbai,Mumbai APMC,Tur,Chili Red,Other,2026-07-29,25000,30000,27500.0
+Maharashtra,Latur,Ahmedpur APMC,Tur,Black Gram(Urd Beans)(Whole),Other,2026-07-29,5150,5150,5150.0
+Maharashtra,Pune,Pune APMC,Tur,Black Gram(Urd Beans)(Whole),Other,2026-07-29,9000,10200,9600.0
+Maharashtra,Nagpur,Nagpur APMC,Tur,Chili Red,Other,2026-07-29,14000,18000,17000.0
+Maharashtra,Mumbai,Mumbai APMC,Tur,Black Gram(Urd Beans)(Whole),Other,2026-07-29,9000,10800,10300.0
+Maharashtra,Akola,Akola APMC,Tur,Chili Red,Other,2026-07-29,1400,24000,21000.0
+Maharashtra,Akola,Akola APMC,Tur,Black Gram(Urd Beans)(Whole),Other,2026-07-29,7900,7900,7900.0
+Maharashtra,Pune,Pune APMC,Tur,Lentil(Masur)(Whole),Other,2026-07-29,7200,7500,7250.0
+Maharashtra,Mumbai,Mumbai APMC,Tur,Lentil(Masur)(Whole),Other,2026-07-29,7100,8500,7800.0
+Maharashtra,Mumbai,Mumbai APMC,Tur,Bengal Gram Dal(Chana Dal),Other,2026-07-29,6000,9000,8200.0
+Maharashtra,Mumbai,Mumbai APMC,Tur,Green Gram Dal(Moong Dal),Other,2026-07-29,8000,11000,10100.0
+Maharashtra,Mumbai,Mumbai APMC,Tur,Black Gram Dal(Urd Dal),Other,2026-07-29,10800,13500,12300.0
+Maharashtra,Latur,Ahmedpur APMC,Moong,Green Gram(Moong)(Whole),Other,2026-07-29,6500,6500,6500.0
+Maharashtra,Pune,Pune APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,9200,9900,9550.0
+Maharashtra,Mumbai,Mumbai APMC,Moong,Green Gram(Moong)(Whole),Other,2026-07-29,8800,13000,11100.0
+Maharashtra,Akola,Akola APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,7050,7555,7180.0
+Maharashtra,Akola,Akola APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,5880,6375,6000.0
+Maharashtra,Buldhana,Buldhana APMC,Moong,Bengal Gram(Gram)(Whole),Kabul Small,2026-07-29,7000,7500,7250.0
+Maharashtra,Mumbai,Mumbai APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,6200,7500,7050.0
+Maharashtra,Pune,Pune APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,6300,7300,6800.0
+Maharashtra,Latur,Latur APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,5875,6282,6000.0
+Maharashtra,Akola,Murtizapur APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,5880,6390,6135.0
+Maharashtra,Buldhana,Buldhana APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,5000,5500,5250.0
+Maharashtra,Nagpur,Nagpur APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,5900,6315,6211.0
+Maharashtra,Latur,Ahmedpur APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,5875,6111,5993.0
+Maharashtra,Dharashiv,Tuljapur APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,5875,6150,6000.0
+Maharashtra,Mumbai,Mumbai APMC,Moong,Green Gram Dal(Moong Dal),Other,2026-07-29,8000,11000,10100.0
+Maharashtra,Latur,Ahmedpur APMC,Moong,Black Gram(Urd Beans)(Whole),Other,2026-07-29,5150,5150,5150.0
+Maharashtra,Latur,Latur APMC,Moong,Red gram/Arhar/Tur(whole),Other,2026-07-29,8000,8450,8350.0
+Maharashtra,Pune,Pune APMC,Moong,Black Gram(Urd Beans)(Whole),Other,2026-07-29,9000,10200,9600.0
+Maharashtra,Akola,Akola APMC,Moong,Red gram/Arhar/Tur(whole),Other,2026-07-29,8015,8205,8100.0
+Maharashtra,Akola,Akola APMC,Moong,Red gram/Arhar/Tur(whole),Other,2026-07-29,7000,7995,7800.0
+Maharashtra,Latur,Ahmedpur APMC,Moong,Red gram/Arhar/Tur(whole),Other,2026-07-29,5500,7750,6880.0
+Maharashtra,Mumbai,Mumbai APMC,Moong,Black Gram(Urd Beans)(Whole),Other,2026-07-29,9000,10800,10300.0
+Maharashtra,Akola,Murtizapur APMC,Moong,Red gram/Arhar/Tur(whole),Other,2026-07-29,7000,7995,7500.0
+Maharashtra,Buldhana,Buldhana APMC,Moong,Red gram/Arhar/Tur(whole),Other,2026-07-29,7000,7600,7300.0
+Maharashtra,Nagpur,Nagpur APMC,Moong,Red gram/Arhar/Tur(whole),Other,2026-07-29,7300,7925,7768.0
+Maharashtra,Akola,Akola APMC,Moong,Black Gram(Urd Beans)(Whole),Other,2026-07-29,7900,7900,7900.0
+Maharashtra,Pune,Pune APMC,Moong,Lentil(Masur)(Whole),Other,2026-07-29,7200,7500,7250.0
+Maharashtra,Mumbai,Mumbai APMC,Moong,Lentil(Masur)(Whole),Other,2026-07-29,7100,8500,7800.0
+Maharashtra,Mumbai,Mumbai APMC,Moong,Bengal Gram Dal(Chana Dal),Other,2026-07-29,6000,9000,8200.0
+Maharashtra,Mumbai,Mumbai APMC,Moong,Black Gram Dal(Urd Dal),Other,2026-07-29,10800,13500,12300.0
+Maharashtra,Mumbai,Mumbai APMC,Moong,Green Peas,White Fozi,2026-07-29,4500,7000,6000.0
+Maharashtra,Mumbai,Mumbai APMC,Moong,Ginger(Green),Other,2026-07-29,6000,13000,9500.0
+Maharashtra,Pune,Pune APMC,Moong,Green Peas,Other,2026-07-29,7000,7900,7450.0
+Maharashtra,Pune,Pune APMC,Moong,Green Chilli,Other,2026-07-29,2800,4500,3650.0
+Maharashtra,Satara,Karad APMC,Moong,Ginger(Green),Other,2026-07-29,8000,10000,10000.0
+Maharashtra,Satara,Karad APMC,Moong,Green Chilli,Other,2026-07-29,3500,4500,4500.0
+Maharashtra,Akola,Akola APMC,Moong,Ginger(Green),Other,2026-07-29,6000,13000,9000.0
+Maharashtra,Mumbai,Mumbai APMC,Moong,Red gram split/Arhar dal/Tur dal,Other,2026-07-29,7800,13000,11100.0
+Maharashtra,Chattrapati Sambhajinagar,Chattrapati Sambhajinagar APMC,Moong,Ginger(Green),Other,2026-07-29,9000,12000,10500.0
+Maharashtra,Chattrapati Sambhajinagar,Chattrapati Sambhajinagar APMC,Moong,Green Chilli,Other,2026-07-29,3500,5000,4250.0
+Maharashtra,Pune,Pune APMC,Moong,Ginger(Green),Other,2026-07-29,2000,10500,6250.0
+Maharashtra,Jalgaon,Bhusaval APMC,Moong,Green Chilli,Other,2026-07-29,3500,4000,4000.0
+Maharashtra,Nagpur,Kamthi APMC,Moong,Ginger(Green),Other,2026-07-29,18050,19050,18550.0
+Maharashtra,Pune,Khed(Chakan) APMC,Moong,Green Chilli,Other,2026-07-29,3500,5500,4500.0
+Maharashtra,Ratnagiri,Ratnagiri (Nachane) APMC,Moong,Green Chilli,Other,2026-07-29,4000,7000,5500.0
+Maharashtra,Satara,Satara APMC,Moong,Ginger(Green),Other,2026-07-29,4000,9000,6500.0
+Maharashtra,Satara,Vai APMC,Moong,Ginger(Green),Other,2026-07-29,8000,10000,9000.0
+Maharashtra,Satara,Vai APMC,Moong,Green Chilli,Other,2026-07-29,3000,4500,4000.0
+Maharashtra,Nagpur,Nagpur APMC,Moong,Ginger(Green),Other,2026-07-29,3000,13500,10875.0
+Maharashtra,Nagpur,Kamthi APMC,Moong,Green Chilli,Other,2026-07-29,5050,6050,5550.0
+Maharashtra,Mumbai,Mumbai APMC,Moong,Green Peas,Other,2026-07-29,4100,6500,5600.0
+Maharashtra,Mumbai,Mumbai APMC,Moong,Banana - Green,Other,2026-07-29,2600,3000,2800.0
+Maharashtra,Mumbai,Mumbai APMC,Moong,Green Chilli,Other,2026-07-29,3000,6000,4500.0
+Maharashtra,Pune,Pune APMC,Moong,Onion Green,Other,2026-07-29,8,20,14.0
+Maharashtra,Ratnagiri,Ratnagiri (Nachane) APMC,Moong,Ginger(Green),Other,2026-07-29,4000,15000,10000.0
+Maharashtra,Satara,Patan APMC,Moong,Ginger(Green),Other,2026-07-29,1500,2500,2000.0
+Maharashtra,Kolhapur,Kolhapur APMC,Moong,Green Chilli,Other,2026-07-29,3000,4000,3500.0
+Maharashtra,Ahilyanagar,Shrirampur APMC,Moong,Green Chilli,Other,2026-07-29,3000,5000,4000.0
+Maharashtra,Pune,Pune(Pimpri) APMC,Moong,Green Chilli,Other,2026-07-29,5000,5500,5250.0
+Maharashtra,Satara,Patan APMC,Moong,Green Chilli,Other,2026-07-29,2500,3000,2750.0
+Maharashtra,Satara,Satara APMC,Moong,Green Chilli,Other,2026-07-29,5000,7000,6000.0
+Maharashtra,Nagpur,Kalmeshwar APMC,Moong,Green Chilli,Other,2026-07-29,3565,4000,3835.0
+Maharashtra,Ahilyanagar,Shrirampur APMC,Moong,Ginger(Green),Other,2026-07-29,4000,12000,8000.0
+Maharashtra,Akola,Akola APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,5880,6375,6000.0
+Maharashtra,Buldhana,Buldhana APMC,Chana,Bengal Gram(Gram)(Whole),Kabul Small,2026-07-29,7000,7500,7250.0
+Maharashtra,Latur,Latur APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,5875,6282,6000.0
+Maharashtra,Akola,Murtizapur APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,5880,6390,6135.0
+Maharashtra,Buldhana,Buldhana APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,5000,5500,5250.0
+Maharashtra,Mumbai,Mumbai APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,6200,7500,7050.0
+Maharashtra,Pune,Pune APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,6300,7300,6800.0
+Maharashtra,Nagpur,Nagpur APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,5900,6315,6211.0
+Maharashtra,Latur,Ahmedpur APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,5875,6111,5993.0
+Maharashtra,Dharashiv,Tuljapur APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,5875,6150,6000.0
+Maharashtra,Latur,Ahmedpur APMC,Chana,Green Gram(Moong)(Whole),Other,2026-07-29,6500,6500,6500.0
+Maharashtra,Pune,Pune APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,9200,9900,9550.0
+Maharashtra,Mumbai,Mumbai APMC,Chana,Green Gram(Moong)(Whole),Other,2026-07-29,8800,13000,11100.0
+Maharashtra,Akola,Akola APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,7050,7555,7180.0
+Maharashtra,Mumbai,Mumbai APMC,Chana,Bengal Gram Dal(Chana Dal),Other,2026-07-29,6000,9000,8200.0
+Maharashtra,Latur,Ahmedpur APMC,Chana,Black Gram(Urd Beans)(Whole),Other,2026-07-29,5150,5150,5150.0
+Maharashtra,Latur,Latur APMC,Chana,Red gram/Arhar/Tur(whole),Other,2026-07-29,8000,8450,8350.0
+Maharashtra,Pune,Pune APMC,Chana,Black Gram(Urd Beans)(Whole),Other,2026-07-29,9000,10200,9600.0
+Maharashtra,Akola,Akola APMC,Chana,Red gram/Arhar/Tur(whole),Other,2026-07-29,8015,8205,8100.0
+Maharashtra,Akola,Akola APMC,Chana,Red gram/Arhar/Tur(whole),Other,2026-07-29,7000,7995,7800.0
+Maharashtra,Latur,Ahmedpur APMC,Chana,Red gram/Arhar/Tur(whole),Other,2026-07-29,5500,7750,6880.0
+Maharashtra,Mumbai,Mumbai APMC,Chana,Black Gram(Urd Beans)(Whole),Other,2026-07-29,9000,10800,10300.0
+Maharashtra,Akola,Murtizapur APMC,Chana,Red gram/Arhar/Tur(whole),Other,2026-07-29,7000,7995,7500.0
+Maharashtra,Buldhana,Buldhana APMC,Chana,Red gram/Arhar/Tur(whole),Other,2026-07-29,7000,7600,7300.0
+Maharashtra,Nagpur,Nagpur APMC,Chana,Red gram/Arhar/Tur(whole),Other,2026-07-29,7300,7925,7768.0
+Maharashtra,Akola,Akola APMC,Chana,Black Gram(Urd Beans)(Whole),Other,2026-07-29,7900,7900,7900.0
+Maharashtra,Mumbai,Mumbai APMC,Chana,Green Gram Dal(Moong Dal),Other,2026-07-29,8000,11000,10100.0
+Maharashtra,Mumbai,Mumbai APMC,Chana,Black Gram Dal(Urd Dal),Other,2026-07-29,10800,13500,12300.0
+Maharashtra,Mumbai,Mumbai APMC,Chana,Red gram split/Arhar dal/Tur dal,Other,2026-07-29,7800,13000,11100.0
+Maharashtra,Pune,Pune APMC,Chana,Lentil(Masur)(Whole),Other,2026-07-29,7200,7500,7250.0
+Maharashtra,Mumbai,Mumbai APMC,Chana,Lentil(Masur)(Whole),Other,2026-07-29,7100,8500,7800.0
+Rajasthan,Churu,Sadulpur APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,5300,5300,5300.0
+Rajasthan,Baran,Kawai Salpura - Atru APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,5735,5765,5750.0
+Rajasthan,Jaipur,Bassi APMC,Tur,Bengal Gram(Gram)(Whole),999,2026-07-29,5401,5815,5608.0
+Rajasthan,Kota,Kota APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,5800,5800,5800.0
+Rajasthan,Ganganagar,Suratgarh APMC,Tur,Green Gram(Moong)(Whole),Other,2026-07-29,5550,6300,6050.0
+Rajasthan,Kota,Kota APMC,Tur,Green Gram(Moong)(Whole),Other,2026-07-29,7000,7000,7000.0
+Rajasthan,Churu,Sadulpur APMC,Tur,Green Gram(Moong)(Whole),Other,2026-07-29,4600,4600,4600.0
+Rajasthan,Jaipur,Jaipur (Grain) APMC,Tur,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,5450,5450,5450.0
+Rajasthan,Kota,Kota APMC,Tur,Black Gram(Urd Beans)(Whole),Other,2026-07-29,7200,7200,7200.0
+Rajasthan,Kota,Kota APMC,Tur,Lentil(Masur)(Whole),Local,2026-07-29,6500,6500,6500.0
+Rajasthan,Kota,Kota APMC,Moong,Green Gram(Moong)(Whole),Other,2026-07-29,7000,7000,7000.0
+Rajasthan,Churu,Sadulpur APMC,Moong,Green Gram(Moong)(Whole),Other,2026-07-29,4600,4600,4600.0
+Rajasthan,Ganganagar,Suratgarh APMC,Moong,Green Gram(Moong)(Whole),Other,2026-07-29,5550,6300,6050.0
+Rajasthan,Churu,Sadulpur APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,5300,5300,5300.0
+Rajasthan,Baran,Kawai Salpura - Atru APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,5735,5765,5750.0
+Rajasthan,Jaipur,Bassi APMC,Moong,Bengal Gram(Gram)(Whole),999,2026-07-29,5401,5815,5608.0
+Rajasthan,Kota,Kota APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,5800,5800,5800.0
+Rajasthan,Jaipur,Jaipur (Grain) APMC,Moong,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,5450,5450,5450.0
+Rajasthan,Kota,Kota APMC,Moong,Black Gram(Urd Beans)(Whole),Other,2026-07-29,7200,7200,7200.0
+Rajasthan,Kota,Kota APMC,Moong,Lentil(Masur)(Whole),Local,2026-07-29,6500,6500,6500.0
+Rajasthan,Ganganagar,Sriganganagar (F&V) APMC,Moong,Ginger(Green),Green Ginger,2026-07-29,11800,12200,12000.0
+Rajasthan,Ganganagar,Sriganganagar (F&V) APMC,Moong,Green Chilli,Green Chilly,2026-07-29,3600,4000,3800.0
+Rajasthan,Churu,Sadulpur APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,5300,5300,5300.0
+Rajasthan,Baran,Kawai Salpura - Atru APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,5735,5765,5750.0
+Rajasthan,Jaipur,Bassi APMC,Chana,Bengal Gram(Gram)(Whole),999,2026-07-29,5401,5815,5608.0
+Rajasthan,Kota,Kota APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,5800,5800,5800.0
+Rajasthan,Ganganagar,Suratgarh APMC,Chana,Green Gram(Moong)(Whole),Other,2026-07-29,5550,6300,6050.0
+Rajasthan,Kota,Kota APMC,Chana,Green Gram(Moong)(Whole),Other,2026-07-29,7000,7000,7000.0
+Rajasthan,Churu,Sadulpur APMC,Chana,Green Gram(Moong)(Whole),Other,2026-07-29,4600,4600,4600.0
+Rajasthan,Jaipur,Jaipur (Grain) APMC,Chana,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,5450,5450,5450.0
+Rajasthan,Kota,Kota APMC,Chana,Black Gram(Urd Beans)(Whole),Other,2026-07-29,7200,7200,7200.0
+Rajasthan,Kota,Kota APMC,Chana,Lentil(Masur)(Whole),Local,2026-07-29,6500,6500,6500.0
+Karnataka,Yadgir,Yadgir APMC,Tur,Red gram/Arhar/Tur(whole),Red,2026-07-29,7039,8581,8074.0
+Karnataka,Raichur,Lingasugur APMC,Tur,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,7600,8200,7600.0
+Karnataka,Bagalkot,Hungund APMC,Tur,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,8000,8000,8000.0
+Karnataka,Shivamogga,Bhadravathi APMC,Tur,Red gram split/Arhar dal/Tur dal,Arhar Dal(Tur),2026-07-29,7100,10600,10600.0
+Karnataka,Yadgir,Yadgir APMC,Tur,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,5000,5000,5000.0
+Karnataka,Shivamogga,Bhadravathi APMC,Tur,Bengal Gram(Gram)(Whole),Jawari/Local,2026-07-29,7900,7900,7900.0
+Karnataka,Koppal,Kustagi APMC,Tur,Green Gram(Moong)(Whole),Local,2026-07-29,10200,10200,10200.0
+Karnataka,Shivamogga,Bhadravathi APMC,Tur,Green Gram(Moong)(Whole),Ordinary (Split),2026-07-29,8300,8300,8300.0
+Karnataka,Chamarajanagar,Gundlupet APMC,Tur,Alasande Gram,Alasande Gram,2026-07-29,7500,7500,7500.0
+Karnataka,Chamarajanagar,Gundlupet APMC,Tur,Kulthi(Horse Gram),Horse gram (Whole),2026-07-29,5200,5600,5200.0
+Karnataka,Shivamogga,Bhadravathi APMC,Tur,Black Gram Dal(Urd Dal),Black Gram Dal,2026-07-29,11238,14100,12100.0
+Karnataka,Koppal,Kustagi APMC,Moong,Green Gram(Moong)(Whole),Local,2026-07-29,10200,10200,10200.0
+Karnataka,Shivamogga,Bhadravathi APMC,Moong,Green Gram(Moong)(Whole),Ordinary (Split),2026-07-29,8300,8300,8300.0
+Karnataka,Yadgir,Yadgir APMC,Moong,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,5000,5000,5000.0
+Karnataka,Shivamogga,Bhadravathi APMC,Moong,Bengal Gram(Gram)(Whole),Jawari/Local,2026-07-29,7900,7900,7900.0
+Karnataka,Raichur,Lingasugur APMC,Moong,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,7600,8200,7600.0
+Karnataka,Yadgir,Yadgir APMC,Moong,Red gram/Arhar/Tur(whole),Red,2026-07-29,7039,8581,8074.0
+Karnataka,Bagalkot,Hungund APMC,Moong,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,8000,8000,8000.0
+Karnataka,Chamarajanagar,Gundlupet APMC,Moong,Alasande Gram,Alasande Gram,2026-07-29,7500,7500,7500.0
+Karnataka,Chamarajanagar,Gundlupet APMC,Moong,Kulthi(Horse Gram),Horse gram (Whole),2026-07-29,5200,5600,5200.0
+Karnataka,Shivamogga,Bhadravathi APMC,Moong,Black Gram Dal(Urd Dal),Black Gram Dal,2026-07-29,11238,14100,12100.0
+Karnataka,Kolar,Bangarpet APMC,Moong,Green Chilli,Green Chilly,2026-07-29,2500,4000,3500.0
+Karnataka,Shivamogga,Shimoga APMC,Moong,Green Chilli,Green Chilly,2026-07-29,2000,4000,3000.0
+Karnataka,Chamarajanagar,Gundlupet APMC,Moong,Green Chilli,Green Chilly,2026-07-29,2400,2600,2500.0
+Karnataka,Chamarajanagar,Chamarajanagar APMC,Moong,Green Chilli,Green Chilly,2026-07-29,1200,2400,1800.0
+Karnataka,Bengaluru South,Channapatna APMC,Moong,Green Chilli,Green Chilly,2026-07-29,3500,4000,3700.0
+Karnataka,Chikkaballapur,Bagepalli APMC,Moong,Green Chilli,Green Chilly,2026-07-29,3000,3500,3100.0
+Karnataka,Davangere,Davangere APMC,Moong,Green Chilli,Green Chilly,2026-07-29,800,2300,1600.0
+Karnataka,Davangere,Honnali APMC,Moong,Green Chilli,Green Chilly,2026-07-29,1500,1800,1700.0
+Karnataka,Bengaluru South,Ramanagara APMC,Moong,Ginger(Green),Green Ginger,2026-07-29,7000,14000,10000.0
+Karnataka,Bengaluru South,Ramanagara APMC,Moong,Green Chilli,Green Chilly,2026-07-29,3000,5000,4000.0
+Karnataka,Shivamogga,Bhadravathi APMC,Moong,Red gram split/Arhar dal/Tur dal,Arhar Dal(Tur),2026-07-29,7100,10600,10600.0
+Karnataka,Bengaluru South,Ramanagara APMC,Moong,Green Avare(W),Green Avare (W),2026-07-29,3200,5000,4000.0
+Karnataka,Yadgir,Yadgir APMC,Chana,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,5000,5000,5000.0
+Karnataka,Shivamogga,Bhadravathi APMC,Chana,Bengal Gram(Gram)(Whole),Jawari/Local,2026-07-29,7900,7900,7900.0
+Karnataka,Koppal,Kustagi APMC,Chana,Green Gram(Moong)(Whole),Local,2026-07-29,10200,10200,10200.0
+Karnataka,Shivamogga,Bhadravathi APMC,Chana,Green Gram(Moong)(Whole),Ordinary (Split),2026-07-29,8300,8300,8300.0
+Karnataka,Chamarajanagar,Gundlupet APMC,Chana,Alasande Gram,Alasande Gram,2026-07-29,7500,7500,7500.0
+Karnataka,Raichur,Lingasugur APMC,Chana,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,7600,8200,7600.0
+Karnataka,Yadgir,Yadgir APMC,Chana,Red gram/Arhar/Tur(whole),Red,2026-07-29,7039,8581,8074.0
+Karnataka,Bagalkot,Hungund APMC,Chana,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,8000,8000,8000.0
+Karnataka,Chamarajanagar,Gundlupet APMC,Chana,Kulthi(Horse Gram),Horse gram (Whole),2026-07-29,5200,5600,5200.0
+Karnataka,Shivamogga,Bhadravathi APMC,Chana,Black Gram Dal(Urd Dal),Black Gram Dal,2026-07-29,11238,14100,12100.0
+Karnataka,Shivamogga,Bhadravathi APMC,Chana,Red gram split/Arhar dal/Tur dal,Arhar Dal(Tur),2026-07-29,7100,10600,10600.0
+Telangana,Nirmal,Bhainsa APMC,Tur,Bengal Gram(Gram)(Whole),Bengal Gram (Split),2026-07-29,4000,4000,4000.0
+Telangana,Narayanpet,Narayanpet APMC,Tur,Green Gram(Moong)(Whole),Local (Whole),2026-07-29,8388,9439,9180.0
+Telangana,Nirmal,Bhainsa APMC,Tur,Green Gram(Moong)(Whole),Hybrid,2026-07-29,4500,4500,4500.0
+Telangana,Narayanpet,Narayanpet APMC,Moong,Green Gram(Moong)(Whole),Local (Whole),2026-07-29,8388,9439,9180.0
+Telangana,Nirmal,Bhainsa APMC,Moong,Green Gram(Moong)(Whole),Hybrid,2026-07-29,4500,4500,4500.0
+Telangana,Nirmal,Bhainsa APMC,Moong,Bengal Gram(Gram)(Whole),Bengal Gram (Split),2026-07-29,4000,4000,4000.0
+Telangana,Nagarkurnool,Kalwakurthy APMC,Moong,Green Chilli,Green Chilly,2026-07-29,4250,4250,4250.0
+Telangana,Hyderabad,RYTHU BAZAR MEHDIPATNAM,Moong,Green Chilli,Green Chilly,2026-07-29,3300,3300,3300.0
+Telangana,Ranga Reddy,"Vanasthalipuram,RBZ ",Moong,Banana - Green,Banana - Green,2026-07-29,4000,4000,4000.0
+Telangana,Nalgonda,Venkateswarnagar APMC,Moong,Green Chilli,Green Chilly,2026-07-29,2800,3000,2900.0
+Telangana,Ranga Reddy,"Saroornagar,RBZ",Moong,Banana - Green,Banana - Green,2026-07-29,4000,4000,4000.0
+Telangana,Sangareddy,APMC PATANCHERU,Moong,Green Chilli,Green Chilly,2026-07-29,2500,3500,3000.0
+Telangana,Hyderabad,RYTHU BAZAR MEHDIPATNAM,Moong,Banana - Green,Banana - Green,2026-07-29,600,600,600.0
+Telangana,Hyderabad,Mahboob Manison APMC,Moong,Green Chilli,Green Chilly,2026-07-29,2000,3000,2500.0
+Telangana,Warangal,Warangal APMC,Moong,Green Chilli,Green Chilly,2026-07-29,3500,4000,3750.0
+Telangana,Mahbubnagar,Mahabubnagar(Rythu Bazar),Moong,Green Chilli,Green Chilly,2026-07-29,5000,5000,5000.0
+Telangana,Ranga Reddy,"Vanasthalipuram,RBZ ",Moong,Green Chilli,Green Chilly,2026-07-29,3300,3300,3300.0
+Telangana,Ranga Reddy,"Saroornagar,RBZ",Moong,Green Chilli,Other,2026-07-29,3300,3300,3300.0
+Telangana,Hyderabad,RYTHU BAZAR ERRAGADDA,Moong,Green Chilli,Green Chilly,2026-07-29,3300,3300,3300.0
+Telangana,Hyderabad,RYTHU BAZAR ERRAGADDA,Moong,Banana - Green,Banana - Green,2026-07-29,900,900,900.0
+Telangana,Siddipet,Siddipet(Rythu Bazar) ,Moong,Green Chilli,Green Chilly,2026-07-29,3500,4500,4000.0
+Telangana,Hyderabad,Mahboob Manison APMC,Moong,Ginger(Green),Other,2026-07-29,6500,10000,7800.0
+Telangana,Ranga Reddy,"Vanasthalipuram,RBZ ",Moong,Other green and fresh vegetables,Other,2026-07-29,2000,2000,2000.0
+Telangana,Hyderabad,RYTHU BAZAR MEHDIPATNAM,Moong,Other green and fresh vegetables,Other,2026-07-29,2500,2500,2500.0
+Telangana,Hyderabad,RYTHU BAZAR ERRAGADDA,Moong,Other green and fresh vegetables,Other,2026-07-29,1500,1500,1500.0
+Telangana,Nirmal,Bhainsa APMC,Chana,Bengal Gram(Gram)(Whole),Bengal Gram (Split),2026-07-29,4000,4000,4000.0
+Telangana,Narayanpet,Narayanpet APMC,Chana,Green Gram(Moong)(Whole),Local (Whole),2026-07-29,8388,9439,9180.0
+Telangana,Nirmal,Bhainsa APMC,Chana,Green Gram(Moong)(Whole),Hybrid,2026-07-29,4500,4500,4500.0
+Gujarat,Rajkot,Rajkot APMC,Tur,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,5100,7875,6950.0
+Gujarat,Morbi,Morbi APMC,Tur,Red gram/Arhar/Tur(whole),Other,2026-07-29,5005,6445,5725.0
+Gujarat,Rajkot,Dhoraji APMC,Tur,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,5255,7080,6980.0
+Gujarat,Dahod,Dahod APMC,Tur,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,5800,6350,6100.0
+Gujarat,Dahod,Dahod APMC,Tur,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,6050,6100,6070.0
+Gujarat,Rajkot,Rajkot APMC,Tur,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,5250,6205,5875.0
+Gujarat,Jamnagar,Kalawad APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,5905,6160,6025.0
+Gujarat,Rajkot,Jetpur(Dist.Rajkot) APMC,Tur,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,5250,6250,6000.0
+Gujarat,Surat,Vyra APMC,Tur,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,5000,5650,5325.0
+Gujarat,Rajkot,Rajkot APMC,Tur,Bengal Gram(Gram)(Whole),White (whole),2026-07-29,5400,9405,7925.0
+Gujarat,Morbi,Morbi APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,5500,5960,5730.0
+Gujarat,Jamnagar,Jamnagar APMC,Tur,Bengal Gram(Gram)(Whole),Other,2026-07-29,5705,6205,6045.0
+Gujarat,Rajkot,Jetpur(Dist.Rajkot) APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,7000,8000,7500.0
+Gujarat,Rajkot,Rajkot APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,5500,8650,7500.0
+Gujarat,Dahod,Dahod APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,7000,7600,7350.0
+Gujarat,Surat,Vyra APMC,Tur,Black Gram(Urd Beans)(Whole),Other,2026-07-29,5000,5900,5450.0
+Gujarat,Rajkot,Jetpur(Dist.Rajkot) APMC,Tur,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,7250,8750,8000.0
+Gujarat,Porbandar,Porbandar APMC,Tur,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6500,7300,6900.0
+Gujarat,Navsari,Navsari APMC,Tur,Pegeon Pea(Arhar Fali),Pigeon Pea (Arhar Fali),2026-07-29,10000,11000,10500.0
+Gujarat,Porbandar,Porbandar APMC,Tur,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,8725,8725,8725.0
+Gujarat,Dahod,Dahod APMC,Tur,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,7000,8500,8000.0
+Gujarat,Rajkot,Rajkot APMC,Tur,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,8250,9750,9380.0
+Gujarat,Gir Somnath,Veraval APMC,Tur,Black Gram(Urd Beans)(Whole),Other,2026-07-29,9020,9930,9805.0
+Gujarat,Surat,Surat APMC,Tur,Pegeon Pea(Arhar Fali),Other,2026-07-29,4000,11000,7500.0
+Gujarat,Porbandar,Porbandar APMC,Tur,Kulthi(Horse Gram),Horse gram (Whole),2026-07-29,5575,5825,5700.0
+Gujarat,Rajkot,Jetpur(Dist.Rajkot) APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,7000,8000,7500.0
+Gujarat,Rajkot,Rajkot APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,5500,8650,7500.0
+Gujarat,Dahod,Dahod APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,7000,7600,7350.0
+Gujarat,Porbandar,Porbandar APMC,Moong,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6500,7300,6900.0
+Gujarat,Dahod,Dahod APMC,Moong,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,6050,6100,6070.0
+Gujarat,Rajkot,Rajkot APMC,Moong,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,5250,6205,5875.0
+Gujarat,Jamnagar,Kalawad APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,5905,6160,6025.0
+Gujarat,Rajkot,Jetpur(Dist.Rajkot) APMC,Moong,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,5250,6250,6000.0
+Gujarat,Surat,Vyra APMC,Moong,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,5000,5650,5325.0
+Gujarat,Rajkot,Rajkot APMC,Moong,Bengal Gram(Gram)(Whole),White (whole),2026-07-29,5400,9405,7925.0
+Gujarat,Morbi,Morbi APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,5500,5960,5730.0
+Gujarat,Jamnagar,Jamnagar APMC,Moong,Bengal Gram(Gram)(Whole),Other,2026-07-29,5705,6205,6045.0
+Gujarat,Surat,Vyra APMC,Moong,Black Gram(Urd Beans)(Whole),Other,2026-07-29,5000,5900,5450.0
+Gujarat,Rajkot,Jetpur(Dist.Rajkot) APMC,Moong,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,7250,8750,8000.0
+Gujarat,Rajkot,Rajkot APMC,Moong,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,5100,7875,6950.0
+Gujarat,Morbi,Morbi APMC,Moong,Red gram/Arhar/Tur(whole),Other,2026-07-29,5005,6445,5725.0
+Gujarat,Porbandar,Porbandar APMC,Moong,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,8725,8725,8725.0
+Gujarat,Dahod,Dahod APMC,Moong,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,7000,8500,8000.0
+Gujarat,Rajkot,Rajkot APMC,Moong,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,8250,9750,9380.0
+Gujarat,Rajkot,Dhoraji APMC,Moong,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,5255,7080,6980.0
+Gujarat,Dahod,Dahod APMC,Moong,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,5800,6350,6100.0
+Gujarat,Gir Somnath,Veraval APMC,Moong,Black Gram(Urd Beans)(Whole),Other,2026-07-29,9020,9930,9805.0
+Gujarat,Porbandar,Porbandar APMC,Moong,Kulthi(Horse Gram),Horse gram (Whole),2026-07-29,5575,5825,5700.0
+Gujarat,Surat,Surat APMC,Moong,Banana - Green,Other,2026-07-29,900,1500,1200.0
+Gujarat,Navsari,Bilimora APMC,Moong,Green Chilli,Other,2026-07-29,4000,6000,5000.0
+Gujarat,Navsari,Navsari APMC,Moong,Green Chilli,Green Chilly,2026-07-29,3000,6000,4500.0
+Gujarat,Gandhinagar,"Kalol(Veg,Market,Kalol) APMC",Moong,Green Chilli,Green Chilly,2026-07-29,2750,4500,4000.0
+Gujarat,Dahod,Dahod(Veg. Market) APMC,Moong,Ginger(Green),Green Ginger,2026-07-29,7000,13000,12000.0
+Gujarat,Surat,Bardoli(Kadod) APMC,Moong,Green Chilli,Other,2026-07-29,1850,4600,3400.0
+Gujarat,Morbi,Morbi APMC,Moong,Green Chilli,Green Chilly,2026-07-29,3000,5000,4000.0
+Gujarat,Porbandar,Porbandar APMC,Moong,Green Chilli,Green Chilly,2026-07-29,2000,4000,3000.0
+Gujarat,Surat,Surat APMC,Moong,Green Chilli,Green Chilly,2026-07-29,2000,4500,3250.0
+Gujarat,Surat,Surat APMC,Moong,Ginger(Green),Green Ginger,2026-07-29,5000,13000,9000.0
+Gujarat,Bharuch,Ankleshwar APMC,Moong,Ginger(Green),Green Ginger,2026-07-29,6000,9000,7000.0
+Gujarat,Dahod,Dahod(Veg. Market) APMC,Moong,Green Chilli,Green Chilly,2026-07-29,2500,5000,4500.0
+Gujarat,Anand,"Anand(Veg,Yard,Anand) APMC",Moong,Green Chilli,Green Chilly,2026-07-29,2000,3000,2500.0
+Gujarat,Bharuch,Ankleshwar APMC,Moong,Green Chilli,Green Chilly,2026-07-29,2000,4000,3000.0
+Gujarat,Anand,"Anand(Veg,Yard,Anand) APMC",Moong,Ginger(Green),Green Ginger,2026-07-29,10000,11000,10500.0
+Gujarat,Porbandar,Porbandar APMC,Moong,Ginger(Green),Green Ginger,2026-07-29,10000,12000,11000.0
+Gujarat,Rajkot,Gondal(Veg.market Gondal) APMC,Moong,Green Chilli,Green Chilly,2026-07-29,900,8000,4450.0
+Gujarat,Rajkot,Rajkot(Veg.Sub Yard) APMC,Moong,Ginger(Green),Green Ginger,2026-07-29,8130,13170,10650.0
+Gujarat,Rajkot,Rajkot(Veg.Sub Yard) APMC,Moong,Green Chilli,Green Chilly,2026-07-29,3095,4160,3625.0
+Gujarat,Dahod,Dahod APMC,Chana,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,6050,6100,6070.0
+Gujarat,Rajkot,Rajkot APMC,Chana,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,5250,6205,5875.0
+Gujarat,Jamnagar,Kalawad APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,5905,6160,6025.0
+Gujarat,Rajkot,Jetpur(Dist.Rajkot) APMC,Chana,Bengal Gram(Gram)(Whole),Desi (Whole),2026-07-29,5250,6250,6000.0
+Gujarat,Surat,Vyra APMC,Chana,Bengal Gram(Gram)(Whole),Average (Whole),2026-07-29,5000,5650,5325.0
+Gujarat,Rajkot,Rajkot APMC,Chana,Bengal Gram(Gram)(Whole),White (whole),2026-07-29,5400,9405,7925.0
+Gujarat,Morbi,Morbi APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,5500,5960,5730.0
+Gujarat,Jamnagar,Jamnagar APMC,Chana,Bengal Gram(Gram)(Whole),Other,2026-07-29,5705,6205,6045.0
+Gujarat,Rajkot,Jetpur(Dist.Rajkot) APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,7000,8000,7500.0
+Gujarat,Rajkot,Rajkot APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,5500,8650,7500.0
+Gujarat,Dahod,Dahod APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,7000,7600,7350.0
+Gujarat,Porbandar,Porbandar APMC,Chana,Green Gram(Moong)(Whole),Green (Whole),2026-07-29,6500,7300,6900.0
+Gujarat,Surat,Vyra APMC,Chana,Black Gram(Urd Beans)(Whole),Other,2026-07-29,5000,5900,5450.0
+Gujarat,Rajkot,Jetpur(Dist.Rajkot) APMC,Chana,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,7250,8750,8000.0
+Gujarat,Rajkot,Rajkot APMC,Chana,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,5100,7875,6950.0
+Gujarat,Morbi,Morbi APMC,Chana,Red gram/Arhar/Tur(whole),Other,2026-07-29,5005,6445,5725.0
+Gujarat,Porbandar,Porbandar APMC,Chana,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,8725,8725,8725.0
+Gujarat,Dahod,Dahod APMC,Chana,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,7000,8500,8000.0
+Gujarat,Rajkot,Rajkot APMC,Chana,Black Gram(Urd Beans)(Whole),Black Gram (Whole),2026-07-29,8250,9750,9380.0
+Gujarat,Rajkot,Dhoraji APMC,Chana,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,5255,7080,6980.0
+Gujarat,Dahod,Dahod APMC,Chana,Red gram/Arhar/Tur(whole),Arhar (Whole),2026-07-29,5800,6350,6100.0
+Gujarat,Gir Somnath,Veraval APMC,Chana,Black Gram(Urd Beans)(Whole),Other,2026-07-29,9020,9930,9805.0
+Gujarat,Porbandar,Porbandar APMC,Chana,Kulthi(Horse Gram),Horse gram (Whole),2026-07-29,5575,5825,5700.0

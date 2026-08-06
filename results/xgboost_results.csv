@@ -1,0 +1,4 @@
+crop,XGB_RMSE,XGB_MAE,XGB_R2,Naive_RMSE,XGB_beats_naive,best_iteration
+Chana,325.69,251.51,0.7081,298.16,False,36
+Moong,505.92,333.81,0.7676,484.78,False,74
+Tur,667.13,461.43,0.745,636.6,False,36
