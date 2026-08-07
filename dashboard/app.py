@@ -739,6 +739,118 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/api/weather")
+def get_weather_endpoint():
+    """
+    Complete weather endpoint for Weather Intelligence page.
+    Supports both state-based and GPS coordinate-based queries.
+    
+    Query params:
+        state: State name (optional if lat/lon provided)
+        lat: Latitude (optional, preferred)
+        lon: Longitude (optional, preferred)
+        crop: Crop name (optional, for advisory context)
+        action: Recommendation action (optional, for advisory context)
+        predicted_price: Predicted price (optional, for advisory context)
+    """
+    from services.weather_service import get_weather
+    
+    state = request.args.get("state")
+    lat = request.args.get("lat")
+    lon = request.args.get("lon")
+    crop = request.args.get("crop", "")
+    action = request.args.get("action", "")
+    predicted_price = request.args.get("predicted_price", "")
+    
+    # Convert lat/lon to float if provided
+    if lat and lon:
+        try:
+            lat = float(lat)
+            lon = float(lon)
+        except ValueError:
+            return jsonify({"error": "Invalid lat/lon format"}), 400
+    
+    # Validate that we have either state or coordinates
+    if not state and not (lat and lon):
+        return jsonify({"error": "Either state or lat/lon parameters required"}), 400
+    
+    try:
+        weather_data = get_weather(
+            state=state,
+            lat=lat,
+            lon=lon,
+            crop=crop,
+            action=action,
+            predicted_price=predicted_price
+        )
+        return jsonify(weather_data)
+        
+    except ValueError as e:
+        logger.error(f"Invalid weather request: {e}")
+        return jsonify({"error": str(e)}), 400
+    except requests.RequestException as e:
+        logger.error(f"Weather API request failed: {e}")
+        return jsonify({"error": "Failed to fetch weather data"}), 503
+    except Exception as e:
+        logger.error(f"Weather processing error: {e}")
+        return jsonify({"error": "Internal server error"}), 500
+
+
+@app.route("/api/reverse_geocode")
+def reverse_geocode():
+    """
+    Reverse geocode coordinates to location name using Nominatim.
+    
+    Query params:
+        lat: Latitude (required)
+        lon: Longitude (required)
+    """
+    import requests
+    
+    lat = request.args.get("lat")
+    lon = request.args.get("lon")
+    
+    if not lat or not lon:
+        return jsonify({"error": "lat and lon parameters required"}), 400
+    
+    try:
+        # Use Nominatim (OpenStreetMap) for reverse geocoding
+        url = f"https://nominatim.openstreetmap.org/reverse?lat={lat}&lon={lon}&format=json"
+        headers = {'User-Agent': 'FarmPulse/1.0'}
+        
+        response = requests.get(url, headers=headers, timeout=5)
+        response.raise_for_status()
+        data = response.json()
+        
+        # Extract location components
+        address = data.get('address', {})
+        
+        result = {
+            'village': address.get('village') or address.get('hamlet'),
+            'town': address.get('town') or address.get('city') or address.get('municipality'),
+            'district': address.get('county') or address.get('state_district'),
+            'state': address.get('state'),
+            'country': address.get('country'),
+            'display_name': data.get('display_name'),
+            'lat': float(lat),
+            'lon': float(lon),
+        }
+        
+        logger.info(f"Reverse geocoded ({lat}, {lon}) to {result.get('town')}, {result.get('state')}")
+        return jsonify(result)
+        
+    except requests.Timeout:
+        logger.error(f"Reverse geocoding timeout for ({lat}, {lon})")
+        return jsonify({"error": "Geocoding service timeout"}), 504
+    except requests.RequestException as e:
+        logger.error(f"Reverse geocoding failed for ({lat}, {lon}): {e}")
+        return jsonify({"error": "Geocoding service unavailable"}), 503
+    except Exception as e:
+        logger.error(f"Reverse geocoding error for ({lat}, {lon}): {e}")
+        return jsonify({"error": "Internal server error"}), 500
+
+
+
 @app.route("/api/config")
 def get_config():
     """Returns which crops/states are available, for populating dropdowns."""
@@ -1127,6 +1239,15 @@ def api_dashboard_summary():
             current_month=last_date.month,
         )
 
+        # Fetch weather data
+        from services.weather_service import get_compact_weather
+        weather_data = None
+        try:
+            weather_data = get_compact_weather(state)
+        except Exception as e:
+            logger.warning(f"Weather fetch failed for dashboard {state}: {e}")
+            # Don't fail dashboard if weather fails
+
         # History for sparkline
         history = state_rows[["date", "modal_price"]].copy()
         history["date"] = history["date"].dt.strftime("%Y-%m")
@@ -1145,6 +1266,7 @@ def api_dashboard_summary():
             "msp": msp,
             "msp_alert": alert,
             "recommendation": rec,
+            "weather": weather_data,  # ADDED: Include weather in dashboard response
             "forecast_path": [round(p, 2) for p in path],
             "forecast_labels": forecast_labels,
             "history": history.to_dict(orient="records"),

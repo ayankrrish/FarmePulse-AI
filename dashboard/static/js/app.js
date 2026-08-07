@@ -13,6 +13,8 @@ const AppState = {
   currentState: null,
   currentPage: 'dashboard',
   dashboardData: null,
+  weather: null,  // Shared weather data for Dashboard + Weather Intelligence
+  gpsLocation: null,  // GPS coordinates and location info
   chatMessages: [],
   mode: localStorage.getItem('farmpulse-mode') || 'farmer',
   presentationMode: false,
@@ -63,6 +65,17 @@ const API = {
   },
   getConfig: () => API.get('/api/config'),
   getDashboard: (c, s, d) => API.get('/api/dashboard_summary', { crop: c, state: s, target_date: d }),
+  getWeather: (state, crop, action, predictedPrice, lat, lon) => {
+    const params = { crop: crop || '', action: action || '', predicted_price: predictedPrice || '' };
+    if (lat && lon) {
+      params.lat = lat;
+      params.lon = lon;
+    } else if (state) {
+      params.state = state;
+    }
+    return API.get('/api/weather', params);
+  },
+  reverseGeocode: (lat, lon) => API.get('/api/reverse_geocode', { lat, lon }),
   getEnsemble: (c, s, d) => API.get('/api/ensemble_predict', { crop: c, state: s, target_date: d }),
   getRecommendation: (c, s) => API.get('/api/recommendation', { crop: c, state: s }),
   getMspAlert: (c, s) => API.get('/api/msp_alert', { crop: c, state: s }),
@@ -134,25 +147,7 @@ async function loadPage(page) {
 // ============================================================
 // Weather Helpers (for Dashboard integration)
 // ============================================================
-const STATE_COORDS = {
-  'Gujarat': { lat: 23.0, lon: 72.6, city: 'Ahmedabad' },
-  'Maharashtra': { lat: 19.1, lon: 72.9, city: 'Mumbai' },
-  'Rajasthan': { lat: 26.9, lon: 75.8, city: 'Jaipur' },
-  'Madhya Pradesh': { lat: 23.3, lon: 77.4, city: 'Bhopal' },
-  'Karnataka': { lat: 12.97, lon: 77.6, city: 'Bangalore' },
-  'Andhra Pradesh': { lat: 17.4, lon: 78.5, city: 'Hyderabad' },
-  'Telangana': { lat: 17.4, lon: 78.5, city: 'Hyderabad' },
-  'Uttar Pradesh': { lat: 26.85, lon: 80.95, city: 'Lucknow' },
-};
-
-function weatherIcon(code) {
-  if (code <= 1) return '☀️';
-  if (code <= 3) return '⛅';
-  if (code <= 48) return '🌫️';
-  if (code <= 67) return '🌧️';
-  if (code <= 82) return '🌧️';
-  return '⛈️';
-}
+// Weather now comes from /api/dashboard_summary (no separate fetch needed)
 
 function weatherAdvice(rainProb, temp) {
   if (rainProb > 70) return '🌧️ Heavy rain expected. Avoid outdoor storage. Mandi arrivals may drop — prices could rise.';
@@ -162,36 +157,27 @@ function weatherAdvice(rainProb, temp) {
   return '☀️ Good weather for harvesting and transport to mandi.';
 }
 
-async function fetchWeather(state) {
-  const c = STATE_COORDS[state] || { lat: 20.6, lon: 79.0, city: state };
-  try {
-    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${c.lat}&longitude=${c.lon}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&daily=precipitation_probability_max&timezone=Asia/Kolkata&forecast_days=1`);
-    const w = await res.json();
-    return {
-      temp: Math.round(w.current.temperature_2m),
-      humidity: w.current.relative_humidity_2m,
-      wind: Math.round(w.current.wind_speed_10m),
-      icon: weatherIcon(w.current.weather_code),
-      rainProb: w.daily?.precipitation_probability_max?.[0] || 0,
-      city: c.city,
-    };
-  } catch (e) {
-    return null;
-  }
-}
-
 // ============================================================
 // DASHBOARD
 // ============================================================
 async function loadDashboard(crop, state) {
   // Use centralized state for target_date (same as forecast)
   const targetDate = AppState.targetDate || '';
-  const [data, weather] = await Promise.all([
-    API.getDashboard(crop, state, targetDate),
-    fetchWeather(state),
-  ]);
+  
+  // Fetch dashboard data (includes weather)
+  const data = await API.getDashboard(crop, state, targetDate);
+  
   AppState.dashboardData = data;
-  renderDashboard(data, weather);
+  
+  // Extract and store weather from dashboard response
+  if (data.weather) {
+    AppState.weather = data.weather;
+    console.log('[Dashboard] Weather stored from dashboard_summary:', data.weather);
+  } else {
+    console.warn('[Dashboard] No weather in dashboard response');
+  }
+  
+  renderDashboard(data, data.weather);
 }
 
 function renderDashboard(d, w) {
