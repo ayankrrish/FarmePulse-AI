@@ -17,7 +17,35 @@ const AppState = {
   mode: localStorage.getItem('farmpulse-mode') || 'farmer',
   presentationMode: false,
   analyticsData: null,
+  targetDate: null,  // ADDED: Centralized forecast month state
 };
+
+// ============================================================
+// State Management
+// ============================================================
+function saveStateToStorage() {
+  try {
+    localStorage.setItem('farmpulse-crop', AppState.currentCrop || '');
+    localStorage.setItem('farmpulse-state', AppState.currentState || '');
+    localStorage.setItem('farmpulse-targetDate', AppState.targetDate || '');
+  } catch (e) {
+    console.warn('Failed to save state:', e);
+  }
+}
+
+function loadStateFromStorage() {
+  try {
+    const savedCrop = localStorage.getItem('farmpulse-crop');
+    const savedState = localStorage.getItem('farmpulse-state');
+    const savedDate = localStorage.getItem('farmpulse-targetDate');
+    
+    if (savedCrop) AppState.currentCrop = savedCrop;
+    if (savedState) AppState.currentState = savedState;
+    if (savedDate) AppState.targetDate = savedDate;
+  } catch (e) {
+    console.warn('Failed to load state:', e);
+  }
+}
 
 // ============================================================
 // API
@@ -34,7 +62,7 @@ const API = {
     return data;
   },
   getConfig: () => API.get('/api/config'),
-  getDashboard: (c, s) => API.get('/api/dashboard_summary', { crop: c, state: s }),
+  getDashboard: (c, s, d) => API.get('/api/dashboard_summary', { crop: c, state: s, target_date: d }),
   getEnsemble: (c, s, d) => API.get('/api/ensemble_predict', { crop: c, state: s, target_date: d }),
   getRecommendation: (c, s) => API.get('/api/recommendation', { crop: c, state: s }),
   getMspAlert: (c, s) => API.get('/api/msp_alert', { crop: c, state: s }),
@@ -154,8 +182,10 @@ async function fetchWeather(state) {
 // DASHBOARD
 // ============================================================
 async function loadDashboard(crop, state) {
+  // Use centralized state for target_date (same as forecast)
+  const targetDate = AppState.targetDate || '';
   const [data, weather] = await Promise.all([
-    API.getDashboard(crop, state),
+    API.getDashboard(crop, state, targetDate),
     fetchWeather(state),
   ]);
   AppState.dashboardData = data;
@@ -273,7 +303,8 @@ function renderDashboard(d, w) {
 // PRICE FORECAST (Decision Support — No ML Details)
 // ============================================================
 async function loadForecast(crop, state) {
-  const targetDate = document.getElementById('targetDate')?.value || '';
+  // Use centralized state instead of reading from DOM
+  const targetDate = AppState.targetDate || '';
   const data = await API.getEnsemble(crop, state, targetDate);
   renderForecast(data);
 }
@@ -679,17 +710,18 @@ function renderAssistant() {
   if (AppState.chatMessages.length === 0) {
     AppState.chatMessages.push({
       sender: 'ai',
-      text: `Namaste! 🙏 I'm your FarmPulse AI Assistant.\n\nI can help you with:\n• Should you sell your crop today?\n• What is the MSP for your crop?\n• Which mandi gives the best price?\n• How much profit will you make?\n\nAsk me anything about ${AppState.currentCrop || 'your crop'}!`,
+      text: `Namaste! 🙏 I'm your FarmPulse AI Assistant.\n\nI can help you with:\n• Market price predictions and forecasts\n• Selling recommendations based on MSP and trends\n• Profit calculations and market comparisons\n• General farming questions and best practices\n\nSelect a crop and state, then ask me anything!`,
       time: new Date(),
     });
   }
 
   const suggestions = [
-    { icon: '💰', text: 'Should I sell my crop today?' },
-    { icon: '📊', text: 'Which state gives best price?' },
-    { icon: '🏛️', text: `What is MSP for ${AppState.currentCrop || 'Tur'}?` },
-    { icon: '💵', text: 'How much profit for 10 quintals?' },
-    { icon: '🌤️', text: "Today's weather" },
+    { icon: '💰', text: 'Should I sell my crop now?' },
+    { icon: '📊', text: 'Why is the predicted price changing?' },
+    { icon: '🏛️', text: `What is the MSP for ${AppState.currentCrop || 'this crop'}?` },
+    { icon: '💵', text: 'How much profit can I expect?' },
+    { icon: '🌍', text: 'Which state has the best market price?' },
+    { icon: '📈', text: 'Explain today\'s forecast' },
   ];
 
   el.innerHTML = `
@@ -714,8 +746,9 @@ function renderAssistant() {
 
       <div class="chat-input-area">
         <div class="chat-input-wrapper">
-          <textarea class="chat-input" id="chatInput" rows="1" placeholder="Ask about prices, markets, or selling..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat()}"></textarea>
+          <textarea class="chat-input" id="chatInput" rows="1" placeholder="Ask about prices, markets, farming, or anything..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat()}"></textarea>
           <button class="btn btn-primary" onclick="sendChat()">Send</button>
+          ${AppState.chatMessages.length > 1 ? `<button class="btn btn-secondary" onclick="clearChat()" style="margin-left: 8px;">Clear</button>` : ''}
         </div>
         <div class="chat-disclaimer">AI uses real FarmPulse data. Predictions are estimates — not financial advice.</div>
       </div>
@@ -784,44 +817,82 @@ async function sendChat() {
   renderAssistant();
 }
 
+async function clearChat() {
+  if (!confirm('Clear conversation history?')) return;
+  
+  // Clear local messages
+  AppState.chatMessages = [];
+  
+  // Clear server-side session
+  try {
+    await fetch('/api/ai_assistant/clear', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Session-ID': AppState.sessionId || 'default'
+      },
+      body: JSON.stringify({
+        session_id: AppState.sessionId || 'default'
+      })
+    });
+  } catch (e) {
+    console.warn('Failed to clear server session:', e);
+  }
+  
+  // Reset session ID
+  delete AppState.sessionId;
+  
+  // Re-render with fresh greeting
+  renderAssistant();
+}
+
 async function processQuestion(q) {
-  const lo = q.toLowerCase();
   const crop = AppState.currentCrop;
   const state = AppState.currentState;
 
+  // Check if crop and state are selected
+  if (!crop || !state) {
+    return `❌ Please select a crop and state first to get personalized advice.`;
+  }
+
   try {
-    if (lo.includes('sell') || lo.includes('should i')) {
-      const d = await API.getRecommendation(crop, state);
-      return `${d.action_icon} ${d.primary_action}\n\n${d.action_detail}\n\n• Risk: ${d.risk_level}\n• Trend: ${d.trend_direction}\n• Volatility: ${d.volatility_level}${d.season_note ? '\n• 🌾 ' + d.season_note : ''}`;
-    }
-    if (lo.includes('msp') || lo.includes('minimum support')) {
-      const d = await API.getMspAlert(crop, state);
-      return `${d.icon} MSP for ${d.crop}: ₹${d.msp.toLocaleString('en-IN')}/quintal\n\n${d.message}\n\nPredicted: ₹${d.predicted_price.toLocaleString('en-IN')}\nDifference: ₹${d.difference.toLocaleString('en-IN')}\n\n${d.recommendation}`;
-    }
-    if (lo.includes('best') || lo.includes('which state') || lo.includes('highest') || lo.includes('mandi')) {
-      const d = await API.getMarketComparison(crop);
-      const top3 = (d.markets || []).slice(0, 3);
-      return `📊 Best markets for ${crop}:\n\n${top3.map((m, i) => `${i+1}. ${m.state}: ₹${m.predicted_price.toLocaleString('en-IN')} (${m.change_pct >= 0 ? '+' : ''}${m.change_pct.toFixed(1)}%)`).join('\n')}\n\n🏆 Best: ${d.best_market?.state} at ₹${d.best_market?.predicted_price?.toLocaleString('en-IN')}`;
-    }
-    if (lo.includes('profit') || lo.includes('revenue') || lo.includes('money')) {
-      const qty = lo.match(/(\d+)/)?.[1] || '10';
-      const d = await API.getProfitEstimate(crop, state, qty);
-      return `💰 Profit for ${qty}q of ${crop} (${state}):\n\nCurrent Revenue: ₹${d.current_revenue.toLocaleString('en-IN')}\nPredicted Revenue: ₹${d.predicted_revenue.toLocaleString('en-IN')}\nMSP Revenue: ₹${d.msp_revenue.toLocaleString('en-IN')}\n\n${d.profit_recommendation || ''}`;
-    }
-    if (lo.includes('price') || lo.includes('forecast') || lo.includes('prediction')) {
-      const d = await API.getDashboard(crop, state);
-      return `📈 ${crop} in ${state}:\n\nToday's Price: ₹${d.current_price.toLocaleString('en-IN')}\nExpected Price: ₹${d.predicted_price.toLocaleString('en-IN')}\nChange: ${d.change_pct >= 0 ? '+' : ''}${d.change_pct}%\nTrend: ${d.trend}`;
-    }
-    if (lo.includes('weather') || lo.includes('rain') || lo.includes('temperature')) {
-      const w = await fetchWeather(state);
-      if (w) {
-        return `🌤️ Weather in ${w.city}:\n\n🌡️ Temperature: ${w.temp}°C\n💧 Humidity: ${w.humidity}%\n💨 Wind: ${w.wind} km/h\n🌧️ Rain: ${w.rainProb}%\n\n${weatherAdvice(w.rainProb, w.temp)}`;
+    // Call the AI Assistant API
+    const response = await fetch('/api/ai_assistant', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Session-ID': AppState.sessionId || 'default'
+      },
+      body: JSON.stringify({
+        question: q,
+        crop: crop,
+        state: state,
+        target_date: AppState.targetDate || null
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      // Check if AI is not configured
+      if (response.status === 503 && data.configured === false) {
+        return `⚠️ AI Assistant is not configured.\n\nThe GROQ_API_KEY environment variable needs to be set.\n\nIn the meantime, try using the Dashboard, Price Forecast, or other modules for predictions.`;
       }
-      return '🌤️ Weather data unavailable. Check the Dashboard for weather info.';
+      
+      // Handle other errors
+      throw new Error(data.error || 'Failed to get AI response');
     }
-    return `I can help you with:\n\n• "Should I sell today?"\n• "What is MSP for ${crop}?"\n• "Which state gives best price?"\n• "Profit for 10 quintals"\n• "Today's weather"\n\nTry one of these!`;
+
+    // Store session ID for conversation continuity
+    if (data.session_id) {
+      AppState.sessionId = data.session_id;
+    }
+
+    return data.response;
+
   } catch (e) {
-    return `❌ Sorry, couldn't process that. Error: ${e.message}\n\nPlease check your crop/state selection and try again.`;
+    console.error('AI Assistant error:', e);
+    return `❌ Sorry, I couldn't process your question.\n\nError: ${e.message}\n\nPlease try again or use the Dashboard for predictions.`;
   }
 }
 
@@ -831,8 +902,13 @@ async function processQuestion(q) {
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     AppState.config = await API.getConfig();
+    
+    // Load saved state from localStorage
+    loadStateFromStorage();
+    
     const cropSelect = document.getElementById('cropSelect');
     const stateSelect = document.getElementById('stateSelect');
+    const targetDateInput = document.getElementById('targetDate');
 
     Object.keys(AppState.config).forEach(crop => {
       const opt = document.createElement('option');
@@ -841,22 +917,44 @@ document.addEventListener('DOMContentLoaded', async () => {
       cropSelect.appendChild(opt);
     });
 
-    AppState.currentCrop = cropSelect.value;
+    // Restore saved crop if it exists in config, otherwise use first option
+    if (AppState.currentCrop && AppState.config[AppState.currentCrop]) {
+      cropSelect.value = AppState.currentCrop;
+    } else {
+      AppState.currentCrop = cropSelect.value;
+    }
+    
     updateStates();
+    
+    // Restore saved state if it exists in config, otherwise use first option
+    if (AppState.currentState && AppState.config[AppState.currentCrop]?.includes(AppState.currentState)) {
+      stateSelect.value = AppState.currentState;
+    } else {
+      AppState.currentState = stateSelect.value;
+    }
+    
+    // Restore saved targetDate to input field
+    if (AppState.targetDate && targetDateInput) {
+      targetDateInput.value = AppState.targetDate;
+    }
 
     cropSelect.addEventListener('change', () => {
       AppState.currentCrop = cropSelect.value;
       updateStates();
+      saveStateToStorage();
       loadPage(AppState.currentPage);
     });
 
     stateSelect.addEventListener('change', () => {
       AppState.currentState = stateSelect.value;
+      saveStateToStorage();
       loadPage(AppState.currentPage);
     });
 
-    document.getElementById('targetDate')?.addEventListener('change', () => {
-      if (AppState.currentPage === 'forecast') loadPage('forecast');
+    targetDateInput?.addEventListener('change', () => {
+      AppState.targetDate = targetDateInput.value;
+      saveStateToStorage();
+      loadPage(AppState.currentPage);
     });
 
     document.querySelectorAll('.nav-item[data-page]').forEach(el => {

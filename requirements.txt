@@ -24,4 +24,7 @@ statsmodels>=0.14
 # Prophet (optional — needed for Prophet model training)
 prophet>=1.1
 
+# Environment Variables
+python-dotenv>=1.0
+
 # Note: No cloud dependencies. Everything runs locally.

@@ -19,6 +19,10 @@ from flask import Flask, render_template, jsonify, request
 
 from sklearn.preprocessing import MinMaxScaler
 
+# Load environment variables from .env file
+from dotenv import load_dotenv
+load_dotenv()
+
 # Suppress statsmodels convergence warnings (noisy but harmless)
 warnings.filterwarnings("ignore", category=UserWarning, module="statsmodels")
 warnings.filterwarnings("ignore", category=FutureWarning, module="statsmodels")
@@ -226,17 +230,32 @@ def forecast_gru(crop, prices, steps):
     return forecasts
 
 
-def forecast_xgboost(crop, prices, steps):
-    """Forecast using XGBoost model — same recursive approach as RF."""
+def forecast_xgboost(crop, prices, steps, last_date=None):
+    """Forecast using XGBoost model — same recursive approach as RF.
+    
+    Args:
+        crop: Crop name
+        prices: Historical price array
+        steps: Number of steps to forecast
+        last_date: Last date in the historical data (datetime object)
+    """
     bundle = get_xgb_model(crop)
     if bundle is None:
         return None
     model = bundle["model"]
     working_prices = list(prices)
     forecasts = []
-    last_date = datetime.now()
+    
+    # CRITICAL FIX: Use last_date from data, not current time
+    # If last_date not provided, use January as default (deterministic)
+    if last_date is None:
+        # Default to a fixed month to ensure determinism
+        base_month = 1
+    else:
+        base_month = last_date.month
+    
     for i in range(steps):
-        month = (last_date.month + i) % 12 + 1
+        month = (base_month + i) % 12 + 1
         quarter = (month - 1) // 3 + 1
         row = pd.DataFrame([{
             "lag_1m": working_prices[-1],
@@ -254,7 +273,7 @@ def forecast_xgboost(crop, prices, steps):
     return forecasts
 
 
-def forecast_prophet(crop, prices, steps):
+def forecast_prophet(crop, prices, steps, last_date=None):
     """Forecast using Prophet — fit on-demand for each request.
     
     Prophet models are lightweight and fast to refit, so we don't persist
@@ -264,6 +283,7 @@ def forecast_prophet(crop, prices, steps):
         crop: Crop name (not used, Prophet uses generic approach)
         prices: Historical price array
         steps: Number of months to forecast
+        last_date: Last date in the historical data (datetime object)
         
     Returns:
         List of forecasted prices or None if fitting fails
@@ -271,9 +291,18 @@ def forecast_prophet(crop, prices, steps):
     try:
         from prophet import Prophet
         
+        # CRITICAL FIX: Use last_date from data, not current time
+        # If last_date not provided, use a fixed reference date for determinism
+        if last_date is None:
+            # Use a fixed date to ensure determinism
+            end_date = pd.Timestamp('2024-01-01')
+        else:
+            # Convert to pandas Timestamp if needed
+            end_date = pd.Timestamp(last_date)
+        
         # Prepare data in Prophet format (ds = datestamp, y = value)
         series = pd.DataFrame({
-            'ds': pd.date_range(end=pd.Timestamp.now(), periods=len(prices), freq='MS'),
+            'ds': pd.date_range(end=end_date, periods=len(prices), freq='MS'),
             'y': prices
         })
         
@@ -314,10 +343,16 @@ def forecast_prophet(crop, prices, steps):
         return None
 
 
-def forecast_rf_v2(crop, prices, steps):
+def forecast_rf_v2(crop, prices, steps, last_date=None):
     """Forecast using Random Forest v2 model — recursive lag-based.
     RF v2 models exist for all 3 crops with features:
     ['lag_1m', 'lag_3m', 'lag_6m', 'lag_12m', 'rolling_3m_avg', 'rolling_6m_avg', 'month', 'quarter']
+    
+    Args:
+        crop: Crop name
+        prices: Historical price array
+        steps: Number of steps to forecast
+        last_date: Last date in the historical data (datetime object)
     """
     bundle = get_rf_v2_model(crop)
     if bundle is None:
@@ -325,10 +360,18 @@ def forecast_rf_v2(crop, prices, steps):
     model = bundle["model"]
     feature_cols = bundle["feature_cols"]
     working_prices = list(prices)
-    last_date = datetime.now()
+    
+    # CRITICAL FIX: Use last_date from data, not current time
+    # If last_date not provided, use January as default (deterministic)
+    if last_date is None:
+        # Default to a fixed month to ensure determinism
+        base_month = 1
+    else:
+        base_month = last_date.month
+    
     forecasts = []
     for i in range(steps):
-        month = (last_date.month + i) % 12 + 1
+        month = (base_month + i) % 12 + 1
         quarter = (month - 1) // 3 + 1
         row = pd.DataFrame([{
             "lag_1m": working_prices[-1],
@@ -547,6 +590,9 @@ def _collect_all_forecasts(crop, state, state_rows, prices, steps):
     """
     forecasts = {}
     status = {}
+    
+    # Extract last_date from state_rows for deterministic forecasting
+    last_date = state_rows["date"].iloc[-1] if not state_rows.empty else None
 
     # 1. Tur-specific RF (with arrival quantity features)
     if crop == "Tur":
@@ -559,7 +605,7 @@ def _collect_all_forecasts(crop, state, state_rows, prices, steps):
 
     # 2. Random Forest v2 (exists for all 3 crops)
     try:
-        rf_path = forecast_rf_v2(crop, prices, steps)
+        rf_path = forecast_rf_v2(crop, prices, steps, last_date)  # Pass last_date
         if rf_path is not None:
             forecasts["Random Forest"] = rf_path  # overrides Tur RF if both exist
             status["Random Forest"] = "success"
@@ -596,7 +642,7 @@ def _collect_all_forecasts(crop, state, state_rows, prices, steps):
 
     # 5. XGBoost (if trained)
     try:
-        xgb_path = forecast_xgboost(crop, prices, steps)
+        xgb_path = forecast_xgboost(crop, prices, steps, last_date)  # Pass last_date
         if xgb_path is not None:
             forecasts["XGBoost"] = xgb_path
             status["XGBoost"] = "success"
@@ -648,7 +694,7 @@ def _collect_all_forecasts(crop, state, state_rows, prices, steps):
 
     # 8. Prophet (fit on-demand)
     try:
-        prophet_path = forecast_prophet(crop, prices, steps)
+        prophet_path = forecast_prophet(crop, prices, steps, last_date)  # Pass last_date
         if prophet_path is not None:
             forecasts["Prophet"] = prophet_path
             status["Prophet"] = "success"
@@ -676,7 +722,10 @@ def _get_ensemble_prediction(crop, state, state_rows, prices, steps):
     forecasts_dict, status_dict = _collect_all_forecasts(crop, state, state_rows, prices, steps)
 
     # Build single-step predictions for ensemble weighting
-    single_preds = {m: path[-1] for m, path in forecasts_dict.items()}
+    # CRITICAL FIX: Sort models for deterministic dictionary order
+    sorted_models = sorted(forecasts_dict.keys())
+    single_preds = {m: forecasts_dict[m][-1] for m in sorted_models}
+    
     ensemble_result = ensemble_predict(single_preds, crop, state)
     forecast_result = ensemble_forecast(forecasts_dict, crop, state)
 
@@ -1029,6 +1078,7 @@ def api_dashboard_summary():
     """Aggregated dashboard data — all key metrics in one call."""
     crop = request.args.get("crop")
     state = request.args.get("state")
+    target_date = request.args.get("target_date")  # ADDED: Accept target_date parameter
 
     validation_error = _validate_crop_state(crop, state)
     if validation_error:
@@ -1041,14 +1091,21 @@ def api_dashboard_summary():
 
         prices = state_rows["modal_price"].values
 
-        # Use ensemble for dashboard — this is the core change
+        # FIXED: Compute steps from target_date instead of hardcoded 7
+        steps, error_msg = _compute_steps(target_date, last_date)
+        if error_msg:
+            # If target_date is invalid, default to 1 step (next month)
+            steps = 1
+        
+        # Use ensemble for dashboard with dynamic steps
         ensemble_result, forecast_result, forecasts_dict, status_dict = \
-            _get_ensemble_prediction(crop, state, state_rows, prices, 7)
+            _get_ensemble_prediction(crop, state, state_rows, prices, steps)
 
         path = forecast_result["ensemble_path"]
-        predicted_1 = path[0] if path else ensemble_result["ensemble_price"]
-        predicted_7 = path[-1] if len(path) >= 7 else predicted_1
-        change_pct = (predicted_1 - current_price) / current_price * 100
+        # CRITICAL: Use ensemble_price (same as Forecast endpoint) for consistency
+        predicted_target = ensemble_result["ensemble_price"]
+        
+        change_pct = (predicted_target - current_price) / current_price * 100
 
         # Trend direction from recent prices
         if len(prices) >= 4:
@@ -1057,14 +1114,14 @@ def api_dashboard_summary():
         else:
             trend = "stable"
 
-        # MSP alert
+        # MSP alert - use target month prediction
         msp = MSP_TABLE.get(crop, 0)
-        alert = get_msp_alert(crop, predicted_1, current_price)
+        alert = get_msp_alert(crop, predicted_target, current_price)
 
-        # Recommendation
+        # Recommendation - use target month prediction
         rec = generate_recommendation(
             crop=crop, state=state,
-            current_price=current_price, predicted_price=predicted_1,
+            current_price=current_price, predicted_price=predicted_target,
             history_prices=list(prices), forecast_path=path,
             confidence=ensemble_result["confidence"],
             current_month=last_date.month,
@@ -1074,14 +1131,14 @@ def api_dashboard_summary():
         history = state_rows[["date", "modal_price"]].copy()
         history["date"] = history["date"].dt.strftime("%Y-%m")
 
-        forecast_labels = _build_forecast_labels(last_date, 7)
+        forecast_labels = _build_forecast_labels(last_date, steps)
 
         return jsonify({
             "crop": crop,
             "state": state,
             "current_price": round(current_price, 2),
-            "predicted_price": round(predicted_1, 2),
-            "predicted_7d": round(predicted_7, 2),
+            "predicted_price": round(predicted_target, 2),  # FIXED: Use target month instead of 1-month
+            "predicted_7d": round(path[6] if len(path) >= 7 else predicted_target, 2),  # Keep 7d for backwards compatibility
             "change_pct": round(change_pct, 2),
             "trend": trend,
             "method_used": f"Ensemble ({len(ensemble_result['models_used'])} models)",
@@ -1097,6 +1154,8 @@ def api_dashboard_summary():
             "weights": ensemble_result["weights"],
             "individual_predictions": ensemble_result["individual_predictions"],
             "ensemble_price": ensemble_result["ensemble_price"],
+            "steps_ahead": steps,  # ADDED: Expose steps for debugging
+            "target_month": forecast_labels[-1] if forecast_labels else None,  # ADDED: Expose target month
         })
 
     except Exception as e:
@@ -1230,6 +1289,428 @@ def api_analytics_metadata():
             "validation_dataset_size": None,
         },
     })
+
+
+# ---------------- AI Assistant ----------------
+
+# Session-based conversation memory (in-memory storage)
+# Now includes ConversationContext for intelligent follow-up handling
+conversation_sessions = {}
+
+# Prediction cache: {(crop, state, month, year): (prediction_data, timestamp)}
+prediction_cache = {}
+CACHE_TTL_SECONDS = 300  # 5 minutes
+
+def _fetch_prediction_context(crop: str, state: str, target_month: int, target_year: int) -> dict:
+    """
+    Fetch prediction context for given parameters.
+    Uses caching to avoid redundant predictions within 5 minutes.
+    Reuses existing prediction logic from Dashboard/Forecast endpoints.
+    
+    Args:
+        crop: Crop name
+        state: State name
+        target_month: Target month (1-12)
+        target_year: Target year
+        
+    Returns:
+        Context dictionary with prediction data
+    """
+    from datetime import datetime as dt
+    import time
+    
+    # Check cache first
+    cache_key = (crop, state, target_month, target_year)
+    if cache_key in prediction_cache:
+        cached_data, timestamp = prediction_cache[cache_key]
+        if time.time() - timestamp < CACHE_TTL_SECONDS:
+            logger.info("Using cached prediction for %s/%s/%s/%s", crop, state, target_month, target_year)
+            return cached_data
+        else:
+            # Cache expired, remove it
+            del prediction_cache[cache_key]
+    
+    # Fetch fresh data
+    try:
+        # Get state data
+        state_rows, last_date, current_price = _get_state_data(crop, state)
+        if state_rows is None:
+            raise ValueError(f"No data found for {crop} in {state}")
+        
+        prices = state_rows["modal_price"].values
+        
+        # Compute steps to target month
+        target_date = dt(target_year, target_month, 1)
+        steps, error_msg = _compute_steps(target_date.strftime("%Y-%m"), last_date)
+        if error_msg or steps < 1:
+            steps = 1  # Default to next month
+        
+        # Get ensemble prediction
+        ensemble_result, forecast_result, forecasts_dict, status_dict = \
+            _get_ensemble_prediction(crop, state, state_rows, prices, steps)
+        
+        predicted_price = ensemble_result["ensemble_price"]
+        change_pct = (predicted_price - current_price) / current_price * 100
+        
+        # Get recommendation
+        rec = generate_recommendation(
+            crop=crop, state=state,
+            current_price=current_price, predicted_price=predicted_price,
+            history_prices=list(prices), forecast_path=forecast_result["ensemble_path"],
+            confidence=ensemble_result["confidence"],
+            current_month=last_date.month,
+        )
+        
+        # Build forecast labels
+        forecast_labels = _build_forecast_labels(last_date, steps)
+        target_month_str = forecast_labels[-1] if forecast_labels else f"{target_date.strftime('%B %Y')}"
+        
+        # Build context dictionary
+        context = {
+            "crop": crop,
+            "state": state,
+            "current_price": current_price,
+            "predicted_price": predicted_price,
+            "change_pct": change_pct,
+            "confidence": ensemble_result["confidence"],
+            "msp": MSP_TABLE.get(crop, 0),
+            "trend": "rising" if change_pct > 1 else "falling" if change_pct < -1 else "stable",
+            "target_month": target_month_str,
+            "recommendation": rec,
+            "models_used": ensemble_result["models_used"],
+            "forecast_path": forecast_result["ensemble_path"][:5],
+            "steps_ahead": steps
+        }
+        
+        # Cache the result
+        prediction_cache[cache_key] = (context, time.time())
+        logger.info("Cached prediction for %s/%s/%s/%s", crop, state, target_month, target_year)
+        
+        return context
+        
+    except Exception as e:
+        logger.exception("Error fetching prediction for %s/%s", crop, state)
+        raise ValueError(f"Could not fetch prediction data: {str(e)}")
+
+
+def _build_comparison_context(contexts: list) -> dict:
+    """
+    Build a comparison context from multiple prediction contexts.
+    
+    Args:
+        contexts: List of context dictionaries
+        
+    Returns:
+        Combined context for comparison
+    """
+    if not contexts:
+        raise ValueError("No contexts provided for comparison")
+    
+    if len(contexts) == 1:
+        return contexts[0]
+    
+    # Build comparison summary
+    comparison_items = []
+    for ctx in contexts:
+        comparison_items.append({
+            "crop": ctx["crop"],
+            "state": ctx["state"],
+            "current_price": ctx["current_price"],
+            "predicted_price": ctx["predicted_price"],
+            "change_pct": ctx["change_pct"],
+            "confidence": ctx["confidence"],
+            "msp": ctx["msp"],
+            "trend": ctx["trend"],
+            "recommendation": ctx["recommendation"]
+        })
+    
+    # Use first context as base and add comparison data
+    base_context = contexts[0].copy()
+    base_context["comparison"] = comparison_items
+    base_context["is_comparison"] = True
+    
+    return base_context
+
+
+@app.route("/api/ai_assistant", methods=["POST"])
+def api_ai_assistant():
+    """
+    AI Assistant endpoint - conversational interface with Groq API.
+    Supports dynamic parameter extraction from natural language questions.
+    Maintains session-based conversation history.
+    """
+    from services.ai_service import get_ai_response, validate_api_key, GroqAPIError
+    from services.prompt_builder import (
+        build_full_prompt,
+        format_conversation_history,
+        sanitize_user_input,
+        validate_context
+    )
+    from services.question_parser import parse_question, is_price_question, extract_comparison_requests
+    from datetime import datetime
+    
+    # Check if API key is configured
+    if not validate_api_key():
+        return jsonify({
+            "error": "AI Assistant is not configured. Please set the GROQ_API_KEY environment variable.",
+            "configured": False
+        }), 503
+    
+    try:
+        # Get request data
+        data = request.get_json()
+        if not data:
+            return jsonify({"error": "Invalid request format"}), 400
+        
+        # Extract and validate user question
+        user_question = data.get("question", "").strip()
+        if not user_question:
+            return jsonify({"error": "Question is required"}), 400
+        
+        try:
+            user_question = sanitize_user_input(user_question)
+        except ValueError as e:
+            return jsonify({"error": str(e)}), 400
+        
+        # Get session ID (from request or generate new)
+        session_id = data.get("session_id", request.headers.get("X-Session-ID", "default"))
+        
+        # Get or create conversation context for this session
+        if session_id not in conversation_sessions:
+            from services.context_manager import ConversationContext
+            conversation_sessions[session_id] = {
+                "messages": [],
+                "context": ConversationContext()
+            }
+        
+        session_data = conversation_sessions[session_id]
+        conversation_history = session_data["messages"]
+        conv_context = session_data["context"]
+        
+        # Add question to history
+        conv_context.add_question(user_question)
+        
+        # Get current dashboard selections as fallback
+        dashboard_crop = data.get("crop") or request.args.get("crop")
+        dashboard_state = data.get("state") or request.args.get("state")
+        dashboard_target_date = data.get("target_date")
+        
+        # Parse current date for reference
+        now = datetime.now()
+        fallback_month = conv_context.last_month or now.month
+        fallback_year = conv_context.last_year or now.year
+        
+        if dashboard_target_date:
+            try:
+                target_dt = datetime.fromisoformat(dashboard_target_date)
+                fallback_month = target_dt.month
+                fallback_year = target_dt.year
+            except:
+                pass
+        
+        # Parse question to extract parameters (use conversation context as fallback)
+        parsed = parse_question(
+            user_question,
+            fallback_crop=conv_context.last_crop or dashboard_crop,
+            fallback_state=conv_context.last_state or dashboard_state,
+            fallback_month=fallback_month,
+            fallback_year=fallback_year
+        )
+        
+        # Use extracted or fallback values
+        crop = parsed["crop"]
+        state = parsed["state"]
+        target_month = parsed["month"] or fallback_month
+        target_year = parsed["year"] or fallback_year
+        
+        # Validate we have required parameters
+        if not crop or not state:
+            return jsonify({
+                "error": "Could not determine crop and state. Please select them in the dashboard or specify in your question (e.g., 'What is the price of Moong in Karnataka?')."
+            }), 400
+        
+        # Validate crop/state combination
+        validation_error = _validate_crop_state(crop, state)
+        if validation_error:
+            return validation_error
+        
+        # Check if this is a comparison question
+        comparisons = extract_comparison_requests(user_question)
+        contexts = []
+        
+        if comparisons and len(comparisons) >= 2:
+            # Handle comparison questions
+            try:
+                for comp in comparisons[:2]:  # Limit to 2 comparisons
+                    comp_crop = comp["crop"] or crop
+                    comp_state = comp["state"] or state
+                    comp_month = comp["month"] or target_month
+                    comp_year = comp["year"] or target_year
+                    
+                    # Validate and fetch data
+                    if _validate_crop_state(comp_crop, comp_state):
+                        continue
+                    
+                    try:
+                        context = _fetch_prediction_context(
+                            comp_crop, comp_state, comp_month, comp_year
+                        )
+                        contexts.append(context)
+                    except Exception as e:
+                        logger.warning("Failed to fetch comparison data for %s/%s: %s", 
+                                     comp_crop, comp_state, str(e))
+                
+                # If we got multiple contexts, build comparison prompt
+                if len(contexts) >= 2:
+                    context = _build_comparison_context(contexts)
+                elif len(contexts) == 1:
+                    context = contexts[0]
+                else:
+                    # Fall back to single context
+                    context = _fetch_prediction_context(crop, state, target_month, target_year)
+            except Exception as e:
+                logger.exception("Error in comparison mode")
+                return jsonify({
+                    "error": "Could not fetch comparison data. Please try simplifying your question or select the crop and state in the dashboard first."
+                }), 500
+        else:
+            # Single context fetch
+            try:
+                context = _fetch_prediction_context(crop, state, target_month, target_year)
+            except ValueError as e:
+                # User-friendly error for data issues
+                return jsonify({
+                    "error": f"Unable to get prediction data for {crop} in {state}. This combination may not be supported or data may be unavailable."
+                }), 404
+            except Exception as e:
+                logger.exception("Error fetching prediction context")
+                return jsonify({
+                    "error": "Could not fetch prediction data. Please try again or contact support if the issue persists."
+                }), 500
+        
+        # Update conversation context with current parameters
+        conv_context.update(
+            crop=crop,
+            state=state,
+            month=target_month,
+            year=target_year,
+            prediction=context
+        )
+        
+        # Validate context
+        if not validate_context(context):
+            return jsonify({
+                "error": "Invalid prediction data received. Please try again or select a different crop/state combination."
+            }), 500
+        
+        # Get or initialize conversation history for this session
+        # (already initialized above with ConversationContext)
+        
+        # Build prompts
+        try:
+            system_prompt, user_prompt_with_context = build_full_prompt(
+                user_question=user_question,
+                context=context,
+                include_general_knowledge=True
+            )
+        except Exception as e:
+            logger.exception("Error building prompts")
+            return jsonify({
+                "error": "Could not prepare your question. Please try rephrasing it."
+            }), 500
+        
+        # Format conversation history for API
+        formatted_history = format_conversation_history(conversation_history)
+        
+        # Call Groq API
+        try:
+            ai_response = get_ai_response(
+                system_prompt=system_prompt,
+                user_message=user_prompt_with_context,
+                conversation_history=formatted_history
+            )
+        except GroqAPIError as e:
+            logger.error("Groq API error: %s", str(e))
+            error_msg = str(e)
+            # Provide user-friendly error messages
+            if "rate limit" in error_msg.lower():
+                error_msg = "The AI service is currently busy. Please wait a moment and try again."
+            elif "timeout" in error_msg.lower():
+                error_msg = "The AI service took too long to respond. Please try again with a simpler question."
+            elif "api key" in error_msg.lower():
+                error_msg = "AI service authentication failed. Please contact support."
+            else:
+                error_msg = "The AI service is temporarily unavailable. Please try again in a moment."
+            
+            return jsonify({
+                "error": error_msg,
+                "ai_unavailable": True
+            }), 503
+        except Exception as e:
+            logger.exception("Unexpected error calling AI service")
+            return jsonify({
+                "error": "An unexpected error occurred while getting the AI response. Please try again."
+            }), 500
+        
+        # Update conversation history (keep last 10 exchanges = 20 messages)
+        conversation_history.append({
+            "role": "user",
+            "text": user_question
+        })
+        conversation_history.append({
+            "role": "assistant",
+            "text": ai_response
+        })
+        
+        # Keep only last 10 exchanges (20 messages)
+        if len(conversation_history) > 20:
+            session_data["messages"] = conversation_history[-20:]
+        
+        # Return response
+        return jsonify({
+            "response": ai_response,
+            "session_id": session_id,
+            "context_used": {
+                "crop": crop,
+                "state": state,
+                "target_month": context.get("target_month"),
+                "confidence": context.get("confidence")
+            },
+            "conversation_length": len(conversation_history) // 2
+        })
+        
+    except Exception as e:
+        logger.exception("AI Assistant endpoint error")
+        return jsonify({
+            "error": "An unexpected error occurred. Please try again or contact support if the issue continues."
+        }), 500
+
+
+@app.route("/api/ai_assistant/clear", methods=["POST"])
+def api_ai_assistant_clear():
+    """Clear conversation history for a session."""
+    data = request.get_json() or {}
+    session_id = data.get("session_id", request.headers.get("X-Session-ID", "default"))
+    
+    if session_id in conversation_sessions:
+        del conversation_sessions[session_id]
+    
+    return jsonify({"message": "Conversation cleared", "session_id": session_id})
+
+
+@app.route("/api/ai_assistant/status", methods=["GET"])
+def api_ai_assistant_status():
+    """Check if AI Assistant is configured and available."""
+    from services.ai_service import validate_api_key
+    
+    configured = validate_api_key()
+    
+    return jsonify({
+        "configured": configured,
+        "available": configured,
+        "message": "AI Assistant is ready" if configured else "GROQ_API_KEY not configured"
+    })
+
 
 # ---------------- Error Handlers ----------------
 

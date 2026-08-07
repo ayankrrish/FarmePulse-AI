@@ -89,10 +89,14 @@ def compute_ensemble_weights(crop, state, available_models):
     """
     per_state = _get_per_state_metrics()
     aggregate = _get_aggregate_metrics()
+    
+    # CRITICAL FIX: Sort available_models to ensure deterministic ordering
+    # This prevents dictionary iteration order from affecting weight computation
+    available_models_sorted = sorted(available_models)
 
     # Try to get per-state RMSE for each available model
     rmse_values = {}
-    for model in available_models:
+    for model in available_models_sorted:  # Use sorted list
         # Check per-state results first
         state_data = per_state.get(crop, {}).get(state, {})
         val_scores = state_data.get("validation_scores", {})
@@ -107,11 +111,16 @@ def compute_ensemble_weights(crop, state, available_models):
 
     if not rmse_values:
         # Equal weights if no metrics available
-        n = len(available_models)
-        return {m: 1.0 / n for m in available_models}
+        n = len(available_models_sorted)
+        return {m: 1.0 / n for m in available_models_sorted}
 
     # Inverse-RMSE weighting: lower RMSE → higher weight
-    inverse_rmse = {m: 1.0 / max(r, 1.0) for m, r in rmse_values.items()}
+    # CRITICAL FIX: Iterate in sorted order for deterministic floating-point arithmetic
+    inverse_rmse = {}
+    for model in available_models_sorted:
+        if model in rmse_values:
+            inverse_rmse[model] = 1.0 / max(rmse_values[model], 1.0)
+    
     total = sum(inverse_rmse.values())
     weights = {m: v / total for m, v in inverse_rmse.items()}
 
@@ -138,17 +147,18 @@ def ensemble_predict(predictions_dict, crop, state):
             "error": "No predictions available",
         }
 
-    available = list(predictions_dict.keys())
+    # CRITICAL FIX: Sort models for deterministic iteration
+    available = sorted(predictions_dict.keys())
     weights = compute_ensemble_weights(crop, state, available)
 
-    # Weighted average
+    # Weighted average - iterate in sorted order
     ensemble_price = sum(
         predictions_dict[m] * weights.get(m, 0) for m in available
     )
 
     # Confidence score: based on agreement between models
     # Low standard deviation relative to mean → high confidence
-    values = list(predictions_dict.values())
+    values = [predictions_dict[m] for m in available]  # Sorted order
     if len(values) > 1:
         std = np.std(values)
         mean = np.mean(values)
@@ -168,7 +178,7 @@ def ensemble_predict(predictions_dict, crop, state):
         "models_used": available,
         "weights": {m: round(w, 4) for m, w in weights.items()},
         "individual_predictions": {
-            m: round(v, 2) for m, v in predictions_dict.items()
+            m: round(predictions_dict[m], 2) for m in available  # Sorted order
         },
         "msp": msp,
         "below_msp": below_msp,
@@ -190,18 +200,19 @@ def ensemble_forecast(forecasts_dict, crop, state):
     if not forecasts_dict:
         return {"ensemble_path": [], "confidence": 0, "models_used": []}
 
-    available = list(forecasts_dict.keys())
+    # CRITICAL FIX: Sort models for deterministic iteration
+    available = sorted(forecasts_dict.keys())
     weights = compute_ensemble_weights(crop, state, available)
 
     # Find max forecast length
-    max_steps = max(len(v) for v in forecasts_dict.values())
+    max_steps = max(len(forecasts_dict[m]) for m in available)
 
     ensemble_path = []
     confidences = []
 
     for step in range(max_steps):
         step_preds = {}
-        for model in available:
+        for model in available:  # Sorted iteration
             path = forecasts_dict[model]
             if step < len(path):
                 step_preds[model] = path[step]
@@ -209,13 +220,14 @@ def ensemble_forecast(forecasts_dict, crop, state):
         if not step_preds:
             break
 
-        # Weighted average for this step
-        step_weights = compute_ensemble_weights(crop, state, list(step_preds.keys()))
-        price = sum(step_preds[m] * step_weights.get(m, 0) for m in step_preds)
+        # Weighted average for this step - use sorted keys
+        step_models = sorted(step_preds.keys())
+        step_weights = compute_ensemble_weights(crop, state, step_models)
+        price = sum(step_preds[m] * step_weights.get(m, 0) for m in step_models)
         ensemble_path.append(round(price, 2))
 
-        # Per-step confidence
-        vals = list(step_preds.values())
+        # Per-step confidence - iterate in sorted order
+        vals = [step_preds[m] for m in step_models]
         if len(vals) > 1:
             cv = np.std(vals) / max(np.mean(vals), 1.0)
             conf = max(10, min(100, int(100 * (1 - cv / 0.3))))
