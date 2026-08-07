@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
   <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/weather.css">
 </head>
 <body>
 
@@ -55,6 +56,9 @@
       </a>
       <a class="nav-item" data-page="assistant" href="#">
         <span class="nav-icon">🤖</span> AI Assistant
+      </a>
+      <a class="nav-item" data-page="weather" href="#">
+        <span class="nav-icon">🌦️</span> Weather Intelligence
       </a>
       <div class="academic-nav" hidden>
         <div class="nav-section-title">Research</div>
@@ -137,6 +141,13 @@
       <section class="page-section" id="page-assistant">
         <div id="assistantBody"></div>
       </section>
+      
+      <section class="page-section" id="page-weather">
+        <div id="weatherBody">
+          <div class="loading-overlay"><div class="spinner"></div><span>Loading weather...</span></div>
+        </div>
+      </section>
+      
       <section class="page-section" id="page-analytics">
         <div id="analyticsBody"></div>
       </section>
@@ -151,6 +162,7 @@
 </div>
 
 <script src="/static/js/charts.js"></script>
+<script src="/static/js/weather.js"></script>
 <script src="/static/js/app.js"></script>
 <script src="/static/js/academic.js"></script>
 </body>

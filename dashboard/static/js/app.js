@@ -82,6 +82,7 @@ const PAGE_META = {
   alerts: ['MSP Alerts', 'Minimum Support Price safety checks'],
   comparison: ['Market Comparison', 'Find the best mandi for your crop'],
   assistant: ['AI Assistant', 'Ask anything about prices, markets, and selling'],
+  weather: ['Weather Intelligence', 'Agricultural weather insights and forecasts'],
   analytics: ['Model Analytics', 'Transparent view of the live prediction pipeline'],
   about: ['About FarmPulse AI', 'Project scope, architecture, and technology stack'],
 };
@@ -121,6 +122,7 @@ async function loadPage(page) {
       case 'alerts': await loadAlerts(crop, state); break;
       case 'comparison': await loadComparison(crop); break;
       case 'assistant': renderAssistant(); break;
+      case 'weather': await loadWeatherPage(crop, state); break;
       case 'analytics': await loadAnalytics(crop, state); break;
       case 'about': renderAbout(); break;
     }
