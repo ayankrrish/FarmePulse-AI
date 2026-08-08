@@ -546,9 +546,20 @@ def _get_state_data(crop, state):
 
 
 def _compute_steps(target_date, last_date):
-    """Convert target_date string to number of steps ahead."""
+    """Convert target_date string to number of steps ahead.
+    
+    Supports both YYYY-MM and YYYY-MM-DD formats.
+    """
     if target_date:
-        target_year, target_month = map(int, target_date.split("-"))
+        # Handle both YYYY-MM and YYYY-MM-DD formats
+        parts = target_date.split("-")
+        if len(parts) >= 2:
+            target_year = int(parts[0])
+            target_month = int(parts[1])
+            # Ignore day component if present (parts[2])
+        else:
+            return None, f"Invalid date format: {target_date}. Expected YYYY-MM or YYYY-MM-DD."
+        
         steps = (target_year - last_date.year) * 12 + (target_month - last_date.month)
         if steps < 1:
             return None, f"Please choose a future month - latest known data is {last_date.strftime('%Y-%m')}."
@@ -878,7 +889,14 @@ def predict():
 
         # Work out how many months ahead the requested date is
         if target_date:
-            target_year, target_month = map(int, target_date.split("-"))
+            # Handle both YYYY-MM and YYYY-MM-DD formats
+            parts = target_date.split("-")
+            if len(parts) >= 2:
+                target_year = int(parts[0])
+                target_month = int(parts[1])
+            else:
+                return jsonify({"error": f"Invalid date format: {target_date}"}), 400
+            
             steps = (target_year - last_date.year) * 12 + (target_month - last_date.month)
             if steps < 1:
                 return jsonify({"error": "Please choose a future month - "
@@ -1560,6 +1578,7 @@ def api_ai_assistant():
     AI Assistant endpoint - conversational interface with Groq API.
     Supports dynamic parameter extraction from natural language questions.
     Maintains session-based conversation history.
+    Supports universal weather location queries.
     """
     from services.ai_service import get_ai_response, validate_api_key, GroqAPIError
     from services.prompt_builder import (
@@ -1569,6 +1588,9 @@ def api_ai_assistant():
         validate_context
     )
     from services.question_parser import parse_question, is_price_question, extract_comparison_requests
+    from services.intent_service import detect_intent, requires_location_specific_weather
+    from services.geocoding_service import geocode_location, extract_location_from_query
+    from services.weather_service import get_weather
     from datetime import datetime
     
     # Check if API key is configured
@@ -1602,12 +1624,18 @@ def api_ai_assistant():
             from services.context_manager import ConversationContext
             conversation_sessions[session_id] = {
                 "messages": [],
-                "context": ConversationContext()
+                "context": ConversationContext(),
+                "last_weather_location": None,  # Track last weather query location
+                "last_weather_data": None  # Cache last weather data
             }
         
         session_data = conversation_sessions[session_id]
         conversation_history = session_data["messages"]
         conv_context = session_data["context"]
+        
+        # Detect intent
+        intent_result = detect_intent(user_question, conversation_history)
+        logger.info(f"Detected intent: {intent_result['intent']} (confidence: {intent_result['confidence']})")
         
         # Add question to history
         conv_context.add_question(user_question)
@@ -1616,6 +1644,84 @@ def api_ai_assistant():
         dashboard_crop = data.get("crop") or request.args.get("crop")
         dashboard_state = data.get("state") or request.args.get("state")
         dashboard_target_date = data.get("target_date")
+        
+        # Extract weather and GPS data from frontend (may already be cached)
+        weather_data = data.get("weather")
+        gps_data = data.get("gps")
+        dashboard_data = data.get("dashboard")
+        
+        # INTELLIGENT WEATHER FETCHING
+        # If the question requires weather and mentions a specific location,
+        # fetch weather for that location (separate from market data state)
+        if requires_location_specific_weather(intent_result):
+            # Try to extract location from question
+            mentioned_locations = extract_location_from_query(user_question)
+            
+            target_location = None
+            weather_fetch_needed = False
+            
+            if mentioned_locations:
+                # User mentioned a specific location - use it
+                target_location = mentioned_locations[0]  # Use first mentioned location
+                logger.info(f"Found location in query: {target_location}")
+                weather_fetch_needed = True
+            elif gps_data and gps_data.get('city'):
+                # No location mentioned, but GPS is available
+                target_location = f"{gps_data['city']}, {gps_data['state']}"
+                logger.info(f"Using GPS location: {target_location}")
+                # Weather data might already be in weather_data, check if it matches
+                if not weather_data or not weather_data.get('location'):
+                    weather_fetch_needed = True
+            elif intent_result['intent'] in ['follow_up'] and session_data.get('last_weather_location'):
+                # Follow-up question - reuse last weather location
+                target_location = session_data['last_weather_location']
+                logger.info(f"Using previous weather location: {target_location}")
+                # Try to reuse cached weather data
+                if session_data.get('last_weather_data'):
+                    weather_data = session_data['last_weather_data']
+                    logger.info("Reusing cached weather data")
+                else:
+                    weather_fetch_needed = True
+            elif weather_data:
+                # Frontend already provided weather data
+                logger.info("Using weather data from frontend")
+            else:
+                # No specific location, use dashboard state as fallback
+                if dashboard_state:
+                    target_location = dashboard_state
+                    logger.info(f"Using dashboard state for weather: {dashboard_state}")
+                    weather_fetch_needed = True
+            
+            # Fetch weather if needed
+            if weather_fetch_needed and target_location:
+                logger.info(f"Fetching weather for: {target_location}")
+                try:
+                    # Geocode the location name to coordinates
+                    geo_result = geocode_location(target_location)
+                    
+                    if geo_result:
+                        # Fetch weather using coordinates
+                        fetched_weather = get_weather(
+                            lat=geo_result['lat'],
+                            lon=geo_result['lon'],
+                            crop=dashboard_crop,
+                            action=None,
+                            predicted_price=None
+                        )
+                        
+                        if fetched_weather:
+                            weather_data = fetched_weather
+                            # Cache it
+                            session_data['last_weather_location'] = target_location
+                            session_data['last_weather_data'] = weather_data
+                            logger.info(f"Successfully fetched weather for {target_location}")
+                        else:
+                            logger.warning(f"Weather fetch returned no data for {target_location}")
+                    else:
+                        logger.warning(f"Could not geocode location: {target_location}")
+                except Exception as e:
+                    logger.error(f"Error fetching weather for {target_location}: {e}")
+                    # Continue without weather data rather than failing
         
         # Parse current date for reference
         now = datetime.now()
@@ -1645,79 +1751,111 @@ def api_ai_assistant():
         target_month = parsed["month"] or fallback_month
         target_year = parsed["year"] or fallback_year
         
-        # Validate we have required parameters
-        if not crop or not state:
-            return jsonify({
-                "error": "Could not determine crop and state. Please select them in the dashboard or specify in your question (e.g., 'What is the price of Moong in Karnataka?')."
-            }), 400
+        # Initialize context (may or may not have market data)
+        context = {}
         
-        # Validate crop/state combination
-        validation_error = _validate_crop_state(crop, state)
-        if validation_error:
-            return validation_error
-        
-        # Check if this is a comparison question
-        comparisons = extract_comparison_requests(user_question)
-        contexts = []
-        
-        if comparisons and len(comparisons) >= 2:
-            # Handle comparison questions
-            try:
-                for comp in comparisons[:2]:  # Limit to 2 comparisons
-                    comp_crop = comp["crop"] or crop
-                    comp_state = comp["state"] or state
-                    comp_month = comp["month"] or target_month
-                    comp_year = comp["year"] or target_year
+        # Only fetch and validate market data if the intent requires it
+        if intent_result.get('requires_market', False):
+            # Validate we have required parameters for market queries
+            if not crop or not state:
+                return jsonify({
+                    "error": "Could not determine crop and state. Please select them in the dashboard or specify in your question (e.g., 'What is the price of Moong in Karnataka?')."
+                }), 400
+            
+            # Validate crop/state combination
+            validation_error = _validate_crop_state(crop, state)
+            if validation_error:
+                return validation_error
+            
+            # Check if this is a comparison question
+            comparisons = extract_comparison_requests(user_question)
+            contexts = []
+            
+            if comparisons and len(comparisons) >= 2:
+                # Handle comparison questions
+                try:
+                    for comp in comparisons[:2]:  # Limit to 2 comparisons
+                        comp_crop = comp["crop"] or crop
+                        comp_state = comp["state"] or state
+                        comp_month = comp["month"] or target_month
+                        comp_year = comp["year"] or target_year
+                        
+                        # Validate and fetch data
+                        if _validate_crop_state(comp_crop, comp_state):
+                            continue
+                        
+                        try:
+                            context = _fetch_prediction_context(
+                                comp_crop, comp_state, comp_month, comp_year
+                            )
+                            contexts.append(context)
+                        except Exception as e:
+                            logger.warning("Failed to fetch comparison data for %s/%s: %s", 
+                                         comp_crop, comp_state, str(e))
                     
-                    # Validate and fetch data
-                    if _validate_crop_state(comp_crop, comp_state):
-                        continue
-                    
-                    try:
-                        context = _fetch_prediction_context(
-                            comp_crop, comp_state, comp_month, comp_year
-                        )
-                        contexts.append(context)
-                    except Exception as e:
-                        logger.warning("Failed to fetch comparison data for %s/%s: %s", 
-                                     comp_crop, comp_state, str(e))
-                
-                # If we got multiple contexts, build comparison prompt
-                if len(contexts) >= 2:
-                    context = _build_comparison_context(contexts)
-                elif len(contexts) == 1:
-                    context = contexts[0]
-                else:
-                    # Fall back to single context
+                    # If we got multiple contexts, build comparison prompt
+                    if len(contexts) >= 2:
+                        context = _build_comparison_context(contexts)
+                    elif len(contexts) == 1:
+                        context = contexts[0]
+                    else:
+                        # Fall back to single context
+                        context = _fetch_prediction_context(crop, state, target_month, target_year)
+                except Exception as e:
+                    logger.exception("Error in comparison mode")
+                    return jsonify({
+                        "error": "Could not fetch comparison data. Please try simplifying your question or select the crop and state in the dashboard first."
+                    }), 500
+            else:
+                # Single context fetch
+                try:
                     context = _fetch_prediction_context(crop, state, target_month, target_year)
-            except Exception as e:
-                logger.exception("Error in comparison mode")
-                return jsonify({
-                    "error": "Could not fetch comparison data. Please try simplifying your question or select the crop and state in the dashboard first."
-                }), 500
+                except ValueError as e:
+                    # User-friendly error for data issues
+                    return jsonify({
+                        "error": f"Unable to get prediction data for {crop} in {state}. This combination may not be supported or data may be unavailable."
+                    }), 404
+                except Exception as e:
+                    logger.exception("Error fetching prediction context")
+                    return jsonify({
+                        "error": "Could not fetch prediction data. Please try again or contact support if the issue persists."
+                    }), 500
+            
+            # Update conversation context with current parameters
+            conv_context.update(
+                crop=crop,
+                state=state,
+                month=target_month,
+                year=target_year,
+                prediction=context
+            )
         else:
-            # Single context fetch
-            try:
-                context = _fetch_prediction_context(crop, state, target_month, target_year)
-            except ValueError as e:
-                # User-friendly error for data issues
-                return jsonify({
-                    "error": f"Unable to get prediction data for {crop} in {state}. This combination may not be supported or data may be unavailable."
-                }), 404
-            except Exception as e:
-                logger.exception("Error fetching prediction context")
-                return jsonify({
-                    "error": "Could not fetch prediction data. Please try again or contact support if the issue persists."
-                }), 500
+            # Weather-only or general question - no market data needed
+            # Create a minimal context with crop/state if available
+            context = {
+                "crop": crop if crop else "Unknown",
+                "state": state if state else "Unknown",
+                "is_weather_only": True
+            }
         
-        # Update conversation context with current parameters
-        conv_context.update(
-            crop=crop,
-            state=state,
-            month=target_month,
-            year=target_year,
-            prediction=context
-        )
+        # Add weather and GPS data to context if available
+        if weather_data:
+            context["weather"] = weather_data
+        
+        if gps_data:
+            context["gps"] = gps_data
+        
+        # Add dashboard data if available (to avoid re-fetching)
+        if dashboard_data:
+            # Merge dashboard data with context (dashboard data takes precedence for current values)
+            context["current_price"] = dashboard_data.get("current_price", context.get("current_price"))
+            context["predicted_price"] = dashboard_data.get("predicted_price", context.get("predicted_price"))
+            context["change_pct"] = dashboard_data.get("change_pct", context.get("change_pct"))
+            context["msp"] = dashboard_data.get("msp", context.get("msp"))
+            if dashboard_data.get("recommendation"):
+                context["recommendation"] = dashboard_data["recommendation"]
+            if dashboard_data.get("msp_alert"):
+                context["msp_alert"] = dashboard_data["msp_alert"]
         
         # Validate context
         if not validate_context(context):
@@ -1847,4 +1985,5 @@ def internal_error(e):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    from config import FLASK_HOST, FLASK_PORT, FLASK_DEBUG
+    app.run(host=FLASK_HOST, port=FLASK_PORT, debug=FLASK_DEBUG)

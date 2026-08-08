@@ -698,18 +698,18 @@ function renderAssistant() {
   if (AppState.chatMessages.length === 0) {
     AppState.chatMessages.push({
       sender: 'ai',
-      text: `Namaste! 🙏 I'm your FarmPulse AI Assistant.\n\nI can help you with:\n• Market price predictions and forecasts\n• Selling recommendations based on MSP and trends\n• Profit calculations and market comparisons\n• General farming questions and best practices\n\nSelect a crop and state, then ask me anything!`,
+      text: `Namaste! 🙏 I'm your FarmPulse AI Assistant.\n\nI provide concise, actionable advice on:\n• **Market decisions** - Should I sell? What's the trend?\n• **Weather** - Rain forecast, spraying, irrigation, harvest\n• **Prices** - Current rates, predictions, MSP\n• **Farming** - Crop advice, disease risk, best practices\n\nI use live weather and market data automatically. Ask me anything!`,
       time: new Date(),
     });
   }
 
   const suggestions = [
     { icon: '💰', text: 'Should I sell my crop now?' },
-    { icon: '📊', text: 'Why is the predicted price changing?' },
+    { icon: '🌧️', text: 'Can I spray today?' },
+    { icon: '🌾', text: 'Should I harvest soon?' },
+    { icon: '💧', text: 'Do I need to irrigate?' },
+    { icon: '📊', text: 'Explain today\'s forecast' },
     { icon: '🏛️', text: `What is the MSP for ${AppState.currentCrop || 'this crop'}?` },
-    { icon: '💵', text: 'How much profit can I expect?' },
-    { icon: '🌍', text: 'Which state has the best market price?' },
-    { icon: '📈', text: 'Explain today\'s forecast' },
   ];
 
   el.innerHTML = `
@@ -745,10 +745,38 @@ function renderAssistant() {
   scrollChat();
 }
 
+function formatMarkdown(text) {
+  // Escape HTML to prevent XSS
+  const escapeHtml = (str) => {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  };
+  
+  // Escape the text first for security
+  let formatted = escapeHtml(text);
+  
+  // Convert line breaks
+  formatted = formatted.replace(/\n/g, '<br>');
+  
+  // Convert **bold** to <strong>
+  formatted = formatted.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  
+  // Convert *italic* to <em> (but not if part of **)
+  formatted = formatted.replace(/\*(.+?)\*/g, '<em>$1</em>');
+  
+  // Convert bullet points (- item or • item)
+  formatted = formatted.replace(/^- (.+)$/gm, '• $1');
+  
+  return formatted;
+}
+
 function chatBubbleHtml(msg) {
   const isAI = msg.sender === 'ai';
   const time = msg.time ? new Date(msg.time).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }) : '';
-  const text = msg.text.replace(/\n/g, '<br>');
+  
+  // Format AI messages with Markdown support, user messages as plain text
+  const text = isAI ? formatMarkdown(msg.text) : msg.text.replace(/\n/g, '<br>');
 
   return `
     <div class="chat-msg ${isAI ? '' : 'user'}">
@@ -842,6 +870,49 @@ async function processQuestion(q) {
   if (!crop || !state) {
     return `❌ Please select a crop and state first to get personalized advice.`;
   }
+  
+  // Gather comprehensive context for the AI
+  const contextData = {
+    question: q,
+    crop,
+    state,
+    target_date: AppState.targetDate || null
+  };
+  
+  // Add dashboard data if available
+  if (AppState.dashboardData) {
+    contextData.dashboard = {
+      current_price: AppState.dashboardData.current_price,
+      predicted_price: AppState.dashboardData.predicted_price,
+      change_pct: AppState.dashboardData.change_pct,
+      msp: AppState.dashboardData.msp,
+      recommendation: AppState.dashboardData.recommendation,
+      msp_alert: AppState.dashboardData.msp_alert
+    };
+  }
+  
+  // Add weather data if available (from AppState)
+  if (AppState.weather) {
+    contextData.weather = {
+      current: AppState.weather.current || {},
+      today: AppState.weather.today || {},
+      hourly: AppState.weather.hourly ? AppState.weather.hourly.slice(0, 24) : [],
+      daily: AppState.weather.daily ? AppState.weather.daily.slice(0, 7) : [],
+      location: AppState.weather.location || {},
+      agriculture: AppState.weather.agriculture || {},
+      advisory: AppState.weather.advisory || null
+    };
+  }
+  
+  // Add GPS location if available
+  if (AppState.gpsLocation) {
+    contextData.gps = {
+      city: AppState.gpsLocation.city,
+      district: AppState.gpsLocation.district,
+      state: AppState.gpsLocation.state,
+      accuracy: Math.round(AppState.gpsLocation.accuracy || 0)
+    };
+  }
 
   try {
     // Call the AI Assistant API
@@ -851,12 +922,7 @@ async function processQuestion(q) {
         'Content-Type': 'application/json',
         'X-Session-ID': AppState.sessionId || 'default'
       },
-      body: JSON.stringify({
-        question: q,
-        crop: crop,
-        state: state,
-        target_date: AppState.targetDate || null
-      })
+      body: JSON.stringify(contextData)
     });
 
     const data = await response.json();
